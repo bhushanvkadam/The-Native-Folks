@@ -812,7 +812,7 @@ footer{background:#201b0f;border-radius:1.5rem 1.5rem 0 0;padding:4rem 0 0;}
         <!-- BATCH COUNTER -->
         <div class="batch-bar-wrap" id="batch-wrap">
           <div class="batch-meta">
-            <span class="batch-label" id="batch-num-label">Batch #008</span>
+            <span class="batch-label">Today's Stock</span>
             <span class="batch-count"><span id="batch-remaining">—</span> packs left</span>
           </div>
           <div class="batch-track"><div class="batch-fill" id="batch-fill"></div></div>
@@ -1284,91 +1284,128 @@ updateMobBar();
 
 
 
-// ── Batch counter — deterministic fake decrement ──
+// ── Batch counter — resets to 200 every midnight, drops every 30 mins ──
 (function() {
-  // ▼ UPDATE THIS DATE when a new real batch ships ▼
-  var BATCH_START_DATE = '2025-10-01'; // date batch #008 started
-  var BATCH_NUMBER     = '008';
-  var BATCH_TOTAL      = 200;          // total packs per batch
-  var DAILY_RATE       = 4.2;          // avg packs sold per day
-  var FLOOR            = 12;           // minimum shown before reset
+  // ── CONFIG — only edit these two lines ──────────────────────
+  var BATCH_TOTAL   = 200;   // packs per batch
+  // ─────────────────────────────────────────────────────────────
 
-  var startMs   = new Date(BATCH_START_DATE).getTime();
-  var nowMs     = Date.now();
-  var daysPassed = Math.max(0, (nowMs - startMs) / 86400000);
+  var DROP_PER_INTERVAL = [3, 4, 4, 5, 4, 3, 5, 4, 6, 4, 5, 3,
+                           4, 5, 4, 3, 6, 4, 5, 4, 3, 5, 4, 4,
+                           3, 5, 6, 4, 3, 5, 4, 4, 3, 5, 4, 6,
+                           4, 3, 5, 4, 5, 3, 4, 6, 4, 3, 5, 4];
+  // 48 slots × 30 min = 24 hours. Each slot = packs dropped that half-hour.
+  // Total across 48 slots sums to ~200, so it approaches 0 by end of day.
+  // Seeded so same slot always gives same value — consistent across page loads.
 
-  // Seed randomness per-day so same day = same number
-  var daySeed = Math.floor(daysPassed);
-  var pseudoRandom = ((daySeed * 1103515245 + 12345) & 0x7fffffff) % 100 / 100;
-  var dailyVariance = (pseudoRandom - 0.5) * 1.8; // ±0.9 variance
+  var now       = new Date();
+  var midnight  = new Date(now);
+  midnight.setHours(0, 0, 0, 0);
 
-  var sold = Math.floor(daysPassed * (DAILY_RATE + dailyVariance));
-  var remaining = Math.max(FLOOR, BATCH_TOTAL - sold);
+  // How many 30-min intervals have passed since midnight?
+  var msElapsed  = now.getTime() - midnight.getTime();
+  var intervals  = Math.floor(msElapsed / (30 * 60 * 1000)); // 0–47
+  intervals      = Math.min(intervals, 47); // cap at 47
 
-  // Auto-reset: if would go below floor, show as new batch
-  if (sold >= BATCH_TOTAL - FLOOR) {
-    remaining = Math.floor(BATCH_TOTAL * 0.72 + pseudoRandom * 20);
-    BATCH_NUMBER = String(parseInt(BATCH_NUMBER) + 1).padStart(3, '0');
+  // Sum the drops for all elapsed intervals
+  var totalDropped = 0;
+  for (var i = 0; i < intervals; i++) {
+    totalDropped += DROP_PER_INTERVAL[i];
   }
 
-  var pct = ((BATCH_TOTAL - remaining) / BATCH_TOTAL) * 100;
+  // Clamp: never show below 8, never above BATCH_TOTAL
+  var remaining = Math.max(8, BATCH_TOTAL - totalDropped);
+  var pct       = ((BATCH_TOTAL - remaining) / BATCH_TOTAL) * 100;
 
-  // Set label
-  var numLabel = document.getElementById('batch-num-label');
-  if (numLabel) numLabel.textContent = 'Batch #' + BATCH_NUMBER;
-
-  // Animate remaining count up to value
-  var remEl = document.getElementById('batch-remaining');
-  var fillEl = document.getElementById('batch-fill');
+  // DOM elements
+  var remEl     = document.getElementById('batch-remaining');
+  var fillEl    = document.getElementById('batch-fill');
   var urgencyEl = document.getElementById('batch-urgency');
+  var batchWrap = document.getElementById('batch-wrap');
 
-  if (!remEl) return;
+  if (!remEl || !batchWrap) return;
 
-  // Count animation
-  var start = 0, end = remaining, duration = 1200;
-  var startTime = null;
-  function countUp(ts) {
-    if (!startTime) startTime = ts;
-    var p = Math.min((ts - startTime) / duration, 1);
-    var ease = 1 - Math.pow(1 - p, 3);
-    remEl.textContent = Math.round(ease * end);
-    if (p < 1) {
-      requestAnimationFrame(countUp);
+  // Urgency copy
+  if (urgencyEl) {
+    if (remaining <= 20) {
+      urgencyEl.textContent = 'Almost gone — very few packs left today.';
+      urgencyEl.style.color = '#4b0000';
+    } else if (remaining <= 60) {
+      urgencyEl.textContent = 'Selling fast — grab yours before its gone.';
+      urgencyEl.style.color = '#72594a';
+    } else if (remaining <= 120) {
+      urgencyEl.textContent = 'More than half this batch has been claimed.';
+      urgencyEl.style.color = '#72594a';
     } else {
-      remEl.textContent = end;
+      urgencyEl.textContent = '';
     }
   }
 
-  // Trigger when card scrolls into view
-  var batchWrap = document.getElementById('batch-wrap');
-  if (!batchWrap) return;
-
+  // Animate count-up when card scrolls into view
   var batchStarted = false;
   var batchObs = new IntersectionObserver(function(entries) {
     if (entries[0].isIntersecting && !batchStarted) {
       batchStarted = true;
+
+      // Count up animation
+      var startTime = null;
+      var duration  = 1200;
+      function countUp(ts) {
+        if (!startTime) startTime = ts;
+        var p    = Math.min((ts - startTime) / duration, 1);
+        var ease = 1 - Math.pow(1 - p, 3);
+        remEl.textContent = Math.round(ease * remaining);
+        if (p < 1) { requestAnimationFrame(countUp); }
+        else { remEl.textContent = remaining; }
+      }
       requestAnimationFrame(countUp);
-      // Animate fill bar
+
+      // Fill bar
       setTimeout(function() {
         if (fillEl) fillEl.style.width = pct.toFixed(1) + '%';
       }, 200);
+
       batchObs.unobserve(batchWrap);
     }
   }, { threshold: 0.3 });
   batchObs.observe(batchWrap);
 
-  // Urgency message
-  if (urgencyEl) {
-    if (remaining <= 20) {
-      urgencyEl.textContent = '🔴 Almost gone — order now to avoid missing out.';
-    } else if (remaining <= 50) {
-      urgencyEl.textContent = 'Selling fast — ' + remaining + ' packs left in this batch.';
-    } else if (remaining <= 100) {
-      urgencyEl.textContent = 'More than half the batch is gone.';
-    } else {
-      urgencyEl.textContent = '';
-    }
+  // Live countdown to next drop — updates the display every minute
+  // so if someone stays on the page, the number ticks down in real time
+  function scheduleNextDrop() {
+    var nowMs       = Date.now();
+    var nextSlotMs  = midnight.getTime() + (intervals + 1) * 30 * 60 * 1000;
+    var msToNext    = Math.max(0, nextSlotMs - nowMs);
+
+    setTimeout(function() {
+      // Drop the next interval's packs
+      var drop = DROP_PER_INTERVAL[Math.min(intervals + 1, 47)] || 0;
+      var newRemaining = Math.max(8, remaining - drop);
+      if (remEl && newRemaining !== remaining) {
+        // Animate the drop
+        var from = remaining;
+        var to   = newRemaining;
+        var t0   = null;
+        function dropAnim(ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min((ts - t0) / 600, 1);
+          remEl.textContent = Math.round(from - p * (from - to));
+          if (p < 1) { requestAnimationFrame(dropAnim); }
+          else {
+            remEl.textContent = to;
+            remaining = to;
+            intervals++;
+            pct = ((BATCH_TOTAL - remaining) / BATCH_TOTAL) * 100;
+            if (fillEl) fillEl.style.width = pct.toFixed(1) + '%';
+            scheduleNextDrop(); // schedule the one after
+          }
+        }
+        requestAnimationFrame(dropAnim);
+      }
+    }, msToNext);
   }
+
+  scheduleNextDrop(); // start the live tick chain
 })();
 
 // ── Extended reveal observer for animated elements ──
