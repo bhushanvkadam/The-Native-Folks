@@ -2,8 +2,31 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://ik.imagekit.io"/>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>The Native Folks | Raw. Real. Rooted.</title>
+<meta name="description" content="Sun-dried raisins from Nashik Valley. No sulphur, no bleaching, no shortcuts. Certified organic, lab-tested, and delivered fresh across India."/>
+<meta name="keywords" content="organic raisins, sun dried raisins, sulphur free raisins, natural raisins, nashik raisins, the native folks"/>
+<meta name="author" content="The Native Folks"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://thenativefolks.com/"/>
+<meta property="og:title" content="The Native Folks | Raw. Real. Rooted."/>
+<meta property="og:description" content="Sun-dried raisins from Nashik Valley. No sulphur, no bleaching, no shortcuts. Certified organic and lab-tested."/>
+<meta property="og:image" content="https://ik.imagekit.io/tnf/TNF_BG2.jpg?updatedAt=1775045944912"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="The Native Folks"/>
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Native Folks | Raw. Real. Rooted."/>
+<meta name="twitter:description" content="Sun-dried raisins from Nashik Valley. No sulphur, no bleaching, no shortcuts."/>
+<meta name="twitter:image" content="https://ik.imagekit.io/tnf/TNF_BG2.jpg?updatedAt=1775045944912"/>
+<!-- WhatsApp uses og: tags — already covered above -->
+<link rel="canonical" href="https://thenativefolks.com/"/>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNSJ4R1SCS"></script>
@@ -64,7 +87,7 @@ img{max-width:100%;}
 .mob-btns{display:flex;flex-direction:column;gap:.6rem;padding-top:1rem;border-top:1px solid #f2e7d3;}
 
 /* ── Hero ── */
-#hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;}
+#hero{position:relative;min-height:90vh;display:flex;align-items:flex-start;overflow:hidden;}
 /* grain overlay */
 #hero::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.035;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -226,8 +249,62 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 .footer-copy{font-family:'Manrope',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,248,241,.2);}
 
 /* ── Responsive ── */
+/* ── Mobile hero image component ── */
+.hero-mob-img-wrap{display:none;} /* hidden on desktop */
+.hero-mob-img{width:100%;display:block;object-fit:cover;object-position:right center;}
+
 @media(max-width:900px){
-  #hero-bg img{object-position:80% center;}
+  /* Hero becomes a flex column on mobile */
+  #hero{
+    min-height:unset;
+    flex-direction:column;
+    align-items:stretch;
+    padding-bottom:0;
+  }
+  /* Hide the background image on mobile */
+  #hero-bg{display:none;}
+  /* Remove hero grain/glow on mobile */
+  #hero::before,#hero::after{display:none;}
+  /* Text content */
+  .hero-content{
+    padding:2rem 1.5rem 1.75rem;
+    position:relative;
+    z-index:2;
+    background:#fff8f1;
+  }
+  /* Show the mobile image below */
+  .hero-mob-img-wrap{
+    display:block;
+    position:relative;
+    width:100%;
+    flex-shrink:0;
+    overflow:hidden;
+  }
+  .hero-mob-img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    object-position:70% center;
+    display:block;
+  }
+  /* Soft cream fade at top of image so it blends with text area */
+  .hero-mob-img-wrap::before{
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:60px;
+    background:linear-gradient(to bottom,#fff8f1,transparent);
+    z-index:1;
+    pointer-events:none;
+  }
+  #hero{min-height:100svh;}
+  /* stronger gradient on mobile - full cream on left 55% */
+  #hero-bg::after{background:linear-gradient(to right,
+    rgba(255,248,241,1) 0%,
+    rgba(255,248,241,1) 45%,
+    rgba(255,248,241,.7) 58%,
+    rgba(255,248,241,.1) 75%,
+    transparent 100%) !important;}
   .nav-links,.nav-wa{display:none!important;}
   .ham{display:flex!important;}
   .products-grid-3{grid-template-columns:1fr;}
@@ -239,7 +316,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .compare-vs{flex-direction:row;}
   .vs-line{width:60px;height:2px;}
   
-  .hero-content{padding:2rem 1.5rem 3rem;}
+  .hero-content{padding:2.5rem 1.5rem 3rem;max-width:75%;}
   .journey-grid,.journey-grid-row2{grid-template-columns:repeat(2,1fr);}
   .journey-grid::before,.journey-grid-row2::before{display:none;}
   /* vertical timeline line on mobile */
@@ -423,7 +500,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- NAV -->
 <div id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo"><img data-src="TNF_Black" src="" alt="The Native Folks"/></a>
+    <a href="#hero" class="nav-logo"><img data-src="TNF_Black" src="" alt="The Native Folks" loading="lazy"/></a>
     <nav class="nav-links">
       <a href="#hero" class="nav-active" data-nav="hero">Home</a>
       <a href="#range" data-nav="range">Shop</a>
@@ -431,7 +508,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <a href="#process" data-nav="process">Our Story</a>
     </nav>
     <div class="nav-right">
-      <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" class="nav-wa">
+      <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="nav-wa">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
@@ -439,16 +516,16 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <button class="nav-buy-btn" onclick="toggleDD()">Buy Now <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg></button>
         <div id="nav-dd" class="nav-dropdown">
           <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=nav_amazon" target="_blank" class="dd-item">
-            <div class="dd-icon" style="background:#fff;border:1px solid #f2e7d3;"><img data-src="Amazon_full" src="" alt="Amazon" style="width:26px;height:26px;object-fit:contain;"/></div>
+            <div class="dd-icon" style="background:#fff;border:1px solid #f2e7d3;"><img data-src="Amazon_full" src="" alt="Amazon" style="width:26px;height:26px;object-fit:contain;" loading="lazy"/></div>
             <div><div class="dd-label">Amazon</div><div class="dd-sub">Ships in 1–2 days</div></div>
           </a>
           <div class="dd-sep"></div>
           <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=nav_blinkit" target="_blank" class="dd-item">
-            <div class="dd-icon"><img data-src="Blinkit" src="" alt="Blinkit" style="width:32px;height:32px;object-fit:contain;"/></div>
+            <div class="dd-icon"><img data-src="Blinkit" src="" alt="Blinkit" style="width:32px;height:32px;object-fit:contain;" loading="lazy"/></div>
             <div><div class="dd-label">Blinkit</div><div class="dd-sub">10-min delivery</div></div>
           </a>
           <div class="dd-sep"></div>
-          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" class="dd-item">
+          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="dd-item">
             <div class="dd-icon" style="background:#25D366;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
             <div><div class="dd-label">WhatsApp</div><div class="dd-sub">Direct order</div></div>
           </a>
@@ -466,10 +543,10 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <a href="#process" onclick="closeMob()">Our Story</a>
     <div class="mob-btns">
       <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;"/></span>Amazon</a>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Amazon</a>
       <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;"/></span>Blinkit</a>
-      <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;" loading="lazy"/></span>Blinkit</a>
+      <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
     </div>
   </div>
 </div>
@@ -477,7 +554,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- HERO -->
 <section id="hero">
   <div id="hero-bg">
-    <img data-src="TNF_BG2" src="" alt="Two women harvesting grapes on a sunlit farm"/>
+    <img data-src="TNF_BG2" src="" alt="Two women harvesting grapes on a sunlit farm" loading="lazy"/>
   </div>
   <div class="hero-content">
     <div style="max-width:30rem;">
@@ -487,12 +564,16 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <p class="hero-tags">Rich in Iron · Potassium · Antioxidants</p>
       <div class="hero-btns">
         <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=hero_amazon" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;">
-          <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;"/></span>Buy on Amazon</a>
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Buy on Amazon</a>
         <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=hero_blinkit" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;">
-          <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;"/></span>Buy on Blinkit</a>
-        <span class="wa-pulse"><a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Order on WhatsApp</a></span>
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;" loading="lazy"/></span>Buy on Blinkit</a>
+        <span class="wa-pulse"><a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Order on WhatsApp</a></span>
       </div>
     </div>
+  </div>
+  <!-- Mobile hero image — hidden on desktop, shown on mobile below text -->
+  <div class="hero-mob-img-wrap">
+    <img data-src="TNF_BG2" src="" alt="Two women harvesting grapes" class="hero-mob-img"/>
   </div>
 </section>
 
@@ -564,7 +645,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <div class="pcard">
         <div class="wax"><span>Residue<br/>Free</span></div>
         <div class="pcard-img live">
-          <img data-src="RAISIN" src="" alt="Sun-Dried Raisins" style="max-height:280px;max-width:100%;object-fit:contain;"/>
+          <img data-src="RAISIN" src="" alt="Sun-Dried Raisins" style="max-height:280px;max-width:100%;object-fit:contain;" loading="lazy"/>
         </div>
         <div class="pcard-meta">
           <div>
@@ -585,11 +666,11 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <div class="pcard-btns">
           <div class="pcard-btns-row">
             <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=product_amazon" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.625rem 1rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;">
-              <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;"/></span>Amazon</a>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Amazon</a>
             <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=product_blinkit" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.625rem 1rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;">
-              <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;"/></span>Blinkit</a>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;" loading="lazy"/></span>Blinkit</a>
           </div>
-          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.625rem 1rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Order on WhatsApp</a>
+          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.625rem 1rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Order on WhatsApp</a>
         </div>
       </div>
       <!-- Ghee CS -->
@@ -645,19 +726,19 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <!-- Creative image placement: full-bleed card with floating stats -->
         <div class="health-img-card">
           <div class="health-img-inner">
-            <img data-src="RAISIN_HERO" src="" alt="Sun-Dried Raisins" class="health-img-main"/>
+            <img data-src="RAISIN_HERO" src="" alt="Sun-Dried Raisins" class="health-img-main" loading="lazy"/>
           </div>
           <!-- Circle stat badges — positioned outside/overlapping card edges -->
           <div class="health-float-badge" style="top:-1.5rem;right:2.5rem;">
-            <div class="hfb-num">0</div>
+            <div class="hfb-num" data-target="0" data-suffix="">0</div>
             <div class="hfb-lbl">Additives</div>
           </div>
           <div class="health-float-badge" style="bottom:-1.5rem;left:2.5rem;">
-            <div class="hfb-num">0</div>
+            <div class="hfb-num" data-target="0" data-suffix="">0</div>
             <div class="hfb-lbl">Sulphur</div>
           </div>
           <div class="health-float-badge hfb-accent" style="top:50%;right:-2.25rem;transform:translateY(-50%);">
-            <div class="hfb-num">100%</div>
+            <div class="hfb-num" data-target="100" data-suffix="%">0%</div>
             <div class="hfb-lbl">Organic</div>
           </div>
         </div>
@@ -826,12 +907,12 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         </div>
         <div class="promise-btns" style="display:flex;flex-wrap:wrap;gap:.6rem;">
           <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=promise_amazon" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.18)'" onmouseout="this.style.background='rgba(255,255,255,.1)'">
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:#fff;border-radius:3px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:16px;height:16px;object-fit:contain;"/></span>Amazon
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:#fff;border-radius:3px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:16px;height:16px;object-fit:contain;" loading="lazy"/></span>Amazon
           </a>
           <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=promise_blinkit" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:filter .2s;" onmouseover="this.style.filter='brightness(.95)'" onmouseout="this.style.filter='none'">
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:3px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:20px;height:20px;object-fit:contain;"/></span>Blinkit
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:3px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:20px;height:20px;object-fit:contain;" loading="lazy"/></span>Blinkit
           </a>
-          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
+          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp
           </a>
         </div>
@@ -841,7 +922,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <div class="promise-card-stack">
           <div class="promise-card-shadow"></div>
           <div class="promise-card-main">
-            <img data-src="PROMISE_IMG" src="" alt="Native Folks Sun-Dried Raisins" class="promise-card-img"/>
+            <img data-src="PROMISE_IMG" src="" alt="Native Folks Sun-Dried Raisins" class="promise-card-img" loading="lazy"/>
             <!-- Overlay label at bottom -->
             <div class="promise-card-label">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -994,7 +1075,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <footer id="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-brand-logo"><img data-src="TNF_Black" src="" alt="The Native Folks" style="height:72px;width:auto;filter:invert(1) brightness(1.8);"/></div>
+      <div class="footer-brand-logo"><img data-src="TNF_Black" src="" alt="The Native Folks" style="height:72px;width:auto;filter:invert(1) brightness(1.8);" loading="lazy"/></div>
       <p>Raw. Real. Rooted.<br/>Preserving India's artisanal agricultural heritage for the global palate.</p>
       <div class="email" style="color:rgba(255,248,241,.45);font-family:'Manrope',sans-serif;font-size:.78rem;margin-top:.35rem;" id="footer-email"></div>
       <div style="display:flex;gap:.6rem;margin-top:1.25rem;">
@@ -1024,14 +1105,14 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <h5>Buy Now</h5>
       <div class="footer-buy">
         <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=footer_amazon" target="_blank" class="footer-buy-item">
-          <div class="footer-buy-icon" style="background:#fff;"><img data-src="Amazon_full" src="" alt="Amazon" style="width:24px;height:24px;object-fit:contain;"/></div>
+          <div class="footer-buy-icon" style="background:#fff;"><img data-src="Amazon_full" src="" alt="Amazon" style="width:24px;height:24px;object-fit:contain;" loading="lazy"/></div>
           <div class="footer-buy-label">Amazon</div>
         </a>
         <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=footer_blinkit" target="_blank" class="footer-buy-item">
-          <div class="footer-buy-icon"><img data-src="Blinkit" src="" alt="Blinkit" style="width:28px;height:28px;object-fit:contain;"/></div>
+          <div class="footer-buy-icon"><img data-src="Blinkit" src="" alt="Blinkit" style="width:28px;height:28px;object-fit:contain;" loading="lazy"/></div>
           <div class="footer-buy-label">Blinkit</div>
         </a>
-        <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" class="footer-buy-item">
+        <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="footer-buy-item">
           <div class="footer-buy-icon" style="background:#25D366;color:#fff;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
           <div class="footer-buy-label">WhatsApp</div>
         </a>
@@ -1044,19 +1125,19 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 </footer>
 
 <!-- Floating WhatsApp -->
-<a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" id="wa-float" aria-label="Order on WhatsApp">
+<a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" id="wa-float" aria-label="Order on WhatsApp">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <!-- Mobile buy bar -->
 <div id="mob-buy-bar">
   <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/" target="_blank" class="mbb-amz">
-    <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#fff;border-radius:3px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:14px;height:14px;object-fit:contain;"/></span>Amazon
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#fff;border-radius:3px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:14px;height:14px;object-fit:contain;" loading="lazy"/></span>Amazon
   </a>
   <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617" target="_blank" class="mbb-blnk">
-    <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:3px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:18px;height:18px;object-fit:contain;"/></span>Blinkit
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:3px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Blinkit
   </a>
-  <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%20The%20Native%20Folks%20Sun-Dried%20Raisins%20200g.%20Please%20share%20details." target="_blank" class="mbb-wa">
+  <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="mbb-wa">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp
   </a>
 </div>
@@ -1167,6 +1248,47 @@ if(document.readyState === 'loading'){
 } else {
   injectImgs();
 }
+
+// ── Scroll counter animation for health badges ──
+(function(){
+  var counters = document.querySelectorAll('.hfb-num[data-target]');
+  if(!counters.length) return;
+
+  var counterIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el = entry.target;
+      var target = parseInt(el.getAttribute('data-target'));
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1200;
+      var start = null;
+
+      // 0 stays at 0 — just flash it
+      if(target === 0){
+        el.textContent = '0' + suffix;
+        counterIO.unobserve(el);
+        return;
+      }
+
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        // ease out cubic
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if(progress < 1){
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target + suffix;
+        }
+      }
+      requestAnimationFrame(step);
+      counterIO.unobserve(el);
+    });
+  }, {threshold: 0.5});
+
+  counters.forEach(function(c){ counterIO.observe(c); });
+})();
 
 // ── FAQ accordion ──
 function toggleFaq(btn){
