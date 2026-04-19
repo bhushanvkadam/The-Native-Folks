@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://ik.imagekit.io"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sun-Dried Raisins | The Native Folks</title>
+<meta name="description" content="Nashik sun-dried raisins. No sulphur, no bleaching, no shortcuts. Certified organic, lab-tested, residue ≤0.1%."/>
+<link rel="canonical" href="https://thenativefolks.com/raisin.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNSJ4R1SCS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RNSJ4R1SCS');</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#fff8f1;color:#201b0f;font-family:'Manrope',sans-serif;overflow-x:hidden;}
+h1,h2,h3,h4,h5{font-family:'Epilogue',sans-serif;}
+a{text-decoration:none;}
+img{max-width:100%;}
+
+/* ── Ticker ── */
+.ticker-wrap{overflow:hidden;background:#032717;color:#fff;padding:10px 0;position:sticky;top:0;z-index:100;}
+.ticker-track{display:flex;gap:3rem;animation:ticker 35s linear infinite;width:max-content;white-space:nowrap;font-family:'Epilogue',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-wrap:hover .ticker-track{animation-play-state:paused;}
+
+/* ── Nav ── */
+#nav{position:sticky;top:38px;z-index:90;background:rgba(255,248,241,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(3,39,23,.07);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.nav-logo img{height:60px;width:auto;display:block;filter:drop-shadow(0 1px 3px rgba(0,0,0,.15));}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#72594a;position:relative;padding-bottom:3px;}
+.nav-links a.nav-active{color:#032717;border-bottom:2px solid #032717;padding-bottom:2px;}
+.nav-links a:not(.nav-active)::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#032717;transition:width .25s ease;}
+.nav-links a:not(.nav-active):hover::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:.75rem;}
+.nav-wa{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;}
+.nav-buy{position:relative;}
+.nav-buy-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;border-radius:.75rem;background:#032717;color:#fff;font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;border:none;cursor:pointer;}
+.nav-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);width:220px;background:#fff;border-radius:1rem;box-shadow:0 20px 48px rgba(0,0,0,.12);border:1px solid #f2e7d3;overflow:hidden;z-index:200;}
+.nav-dropdown.open{display:block;animation:fadeD .2s ease;}
+@keyframes fadeD{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.dd-item{display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;transition:background .15s;}
+.dd-item:hover{background:#fef2de;}
+.dd-icon{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+.dd-icon img{width:100%;height:100%;object-fit:contain;}
+.dd-label{font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#201b0f;}
+.dd-sub{font-family:'Manrope',sans-serif;font-size:10px;color:#72594a;margin-top:1px;}
+.dd-sep{height:1px;background:#f2e7d3;margin:0 1.25rem;}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.ham span{width:22px;height:2px;background:#032717;display:block;transition:.3s;}
+#mobile-menu{display:none;flex-direction:column;gap:1.25rem;padding:1.5rem 2rem;background:#fff8f1;border-top:1px solid #f2e7d3;}
+#mobile-menu a{font-family:'Epilogue',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#72594a;}
+.mob-btns{display:flex;flex-direction:column;gap:.6rem;padding-top:1rem;border-top:1px solid #f2e7d3;}
+
+/* ── Sections ── */
+.section{padding:5rem 0;}
+.section-inner{max-width:1280px;margin:0 auto;padding:0 2rem;}
+.section-title{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(2rem,5vw,3.2rem);color:#032717;margin-bottom:.5rem;}
+.section-sub{font-family:'Manrope',sans-serif;font-size:1rem;color:#72594a;margin-bottom:3rem;}
+
+/* ── Product Cover Hero ── */
+#product-hero{background:#fef2de;padding:5rem 0 0;}
+.product-hero-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.product-hero-img{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px;}
+.product-hero-img::before{content:'';position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(ellipse,rgba(232,160,32,.2) 0%,rgba(194,118,24,.06) 50%,transparent 75%);pointer-events:none;}
+.product-hero-img img{position:relative;z-index:2;max-height:380px;object-fit:contain;filter:drop-shadow(0 24px 48px rgba(3,39,23,.15));}
+.wax-badge{position:absolute;top:1.5rem;left:1.5rem;width:60px;height:60px;border-radius:50%;background:#4b0000;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;transform:rotate(-5deg);box-shadow:2px 3px 12px rgba(75,0,0,.3);z-index:10;}
+.wax-badge span{font-family:'Epilogue',sans-serif;font-size:8px;font-weight:900;color:#fff;text-transform:uppercase;line-height:1.2;letter-spacing:.05em;}
+.product-hero-content{}
+.product-breadcrumb{font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;margin-bottom:1.25rem;opacity:.7;}
+.product-breadcrumb a{color:#72594a;}
+.product-breadcrumb a:hover{color:#032717;}
+.product-name{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.5rem);color:#032717;line-height:.95;margin-bottom:.75rem;}
+.product-origin{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.25em;color:#c27618;margin-bottom:1.25rem;}
+.product-desc{font-family:'Manrope',sans-serif;font-size:1rem;color:#72594a;line-height:1.75;margin-bottom:1.75rem;max-width:28rem;}
+.product-price-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
+.product-price{font-family:'Epilogue',sans-serif;font-weight:900;font-size:2rem;color:#032717;}
+.product-weight{font-family:'Manrope',sans-serif;font-size:.85rem;color:#72594a;background:#f2e7d3;padding:.3rem .75rem;border-radius:999px;}
+.product-btns{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem;}
+.product-btns-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
+.product-trust{display:flex;flex-wrap:wrap;gap:.5rem;}
+.trust-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .875rem;border-radius:999px;background:rgba(3,39,23,.06);font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:600;color:#032717;}
+
+/* ── Batch counter ── */
+.batch-bar-wrap{margin-bottom:1.25rem;}
+.batch-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem;}
+.batch-label{font-family:'Manrope',sans-serif;font-size:.72rem;color:#72594a;text-transform:uppercase;letter-spacing:.1em;}
+.batch-count{font-family:'Epilogue',sans-serif;font-size:.8rem;font-weight:700;color:#032717;}
+.batch-track{height:5px;background:rgba(3,39,23,.12);border-radius:999px;overflow:hidden;}
+.batch-fill{height:100%;background:linear-gradient(to right,#c27618,#e8a020);border-radius:999px;transition:width .6s ease;}
+.batch-urgency{font-family:'Manrope',sans-serif;font-size:.7rem;color:#c27618;margin-top:.35rem;min-height:1rem;}
+.batch-live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:.4rem;vertical-align:middle;animation:livePulse 1.8s ease infinite;}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.45;transform:scale(.7);}}
+
+/* ── Health in Every Handful ── */
+.health-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;}
+.health-right-col{display:flex;flex-direction:column;gap:1rem;align-self:end;padding-bottom:1.5rem;}
+.health-bars{border-radius:1rem;overflow:hidden;}
+.hbar{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.5rem;}
+.hbar-icon{font-size:1.1rem;flex-shrink:0;}
+.hbar p{font-family:'Manrope',sans-serif;font-size:.875rem;font-weight:600;color:#fff;}
+/* Health image card */
+.health-img-card{position:relative;border-radius:2rem;overflow:visible;width:100%;aspect-ratio:16/9;box-shadow:0 24px 64px rgba(3,39,23,.15);}
+.health-img-inner{border-radius:2rem;overflow:hidden;width:100%;height:100%;position:relative;}
+.health-img-main{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform .6s ease;}
+.health-img-card:hover .health-img-main{transform:scale(1.03);}
+/* Float badges — all consistent white style */
+.health-float-badge{position:absolute;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.13);border:2px solid rgba(3,39,23,.1);}
+.hfb-num{font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.3rem;color:#032717;line-height:1;}
+.hfb-lbl{font-family:'Manrope',sans-serif;font-size:7.5px;text-transform:uppercase;letter-spacing:.14em;color:#72594a;margin-top:3px;}
+@media(max-width:900px){.health-img-card{aspect-ratio:4/3;}.health-float-badge{width:64px;height:64px;}.hfb-num{font-size:1.1rem;}}
+
+/* ── Journey / From Soil to Seal ── */
+.journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:2.5rem;position:relative;}
+.journey-grid::before{content:'';position:absolute;top:50px;left:calc(16.666% + 26px);right:calc(16.666% + 26px);height:2px;background:linear-gradient(to right,#c27618,#e8a020,#c27618);z-index:0;pointer-events:none;}
+.journey-grid-row2{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
+.journey-grid-row2::before{content:'';position:absolute;top:50px;left:calc(16.666% + 26px);right:calc(16.666% + 26px);height:2px;background:linear-gradient(to right,#c27618,#e8a020,#c27618);z-index:0;pointer-events:none;}
+.jstep{background:#fef3de;border-radius:1.25rem;padding:1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.75rem;margin:.5rem;position:relative;z-index:1;}
+.jstep-icon{width:52px;height:52px;border-radius:50%;background:#f2e7d3;border:3px solid #e8c97a;display:flex;align-items:center;justify-content:center;position:relative;z-index:2;}
+.jstep-num{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#c27618;}
+.jstep p{font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;line-height:1.5;}
+.jstep.highlight .jstep-icon{background:#032717;border-color:#fef3de;}
+.journey-tagline{text-align:center;}
+.journey-tagline p:first-child{font-family:'Epilogue',sans-serif;font-weight:700;font-size:1.1rem;color:#032717;}
+.journey-tagline p:last-child{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(1.5rem,4vw,2.5rem);color:#032717;}
+
+/* ── Promise ── */
+.promise-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.promise-list{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:2.5rem;}
+.promise-item{display:flex;align-items:center;gap:.875rem;}
+.promise-star{color:#F8CB46;font-size:1.1rem;flex-shrink:0;}
+.promise-item span{font-family:'Manrope',sans-serif;font-size:.95rem;color:rgba(255,255,255,.85);}
+.promise-item strong{color:#fff;}
+.promise-visual{display:flex;align-items:center;justify-content:center;}
+.promise-card-stack{position:relative;width:100%;max-width:440px;}
+.promise-card-shadow{position:absolute;inset:0;background:rgba(255,255,255,.08);border-radius:2rem;transform:rotate(4deg) translateY(8px);border:1px solid rgba(255,255,255,.1);}
+.promise-card-main{position:relative;border-radius:2rem;overflow:hidden;aspect-ratio:3/4;box-shadow:0 32px 80px rgba(0,0,0,.35);}
+.promise-card-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s ease;}
+.promise-card-main:hover .promise-card-img{transform:scale(1.04);}
+.promise-card-label{position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;background:linear-gradient(to top,rgba(3,39,23,.9) 0%,rgba(3,39,23,.4) 60%,transparent 100%);display:flex;align-items:center;gap:.6rem;}
+.promise-card-label span{font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#fff;}
+.promise-year-badge{position:absolute;top:-1.25rem;right:-1.25rem;width:72px;height:72px;border-radius:50%;background:#F8CB46;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(248,203,70,.4);z-index:2;}
+.promise-btns{display:flex;flex-wrap:wrap;gap:.75rem;}
+.promise-item{opacity:0;transform:translateX(-16px);transition:opacity .5s ease,transform .5s ease;}
+.promise-item.v{opacity:1;transform:translateX(0);}
+.promise-item:nth-child(2){transition-delay:.1s;}
+.promise-item:nth-child(3){transition-delay:.2s;}
+.promise-item:nth-child(4){transition-delay:.3s;}
+
+/* ── FAQ ── */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;}
+.faq-item{background:#fef2de;border-radius:1.25rem;overflow:hidden;transition:box-shadow .25s;}
+.faq-item:hover{box-shadow:0 8px 32px rgba(3,39,23,.07);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.4rem 1.5rem;cursor:pointer;user-select:none;}
+.faq-q-text{font-family:'Epilogue',sans-serif;font-size:.95rem;font-weight:700;color:#032717;line-height:1.35;}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:#032717;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s ease;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;}
+.faq-item.open .faq-a{max-height:300px;}
+.faq-a-inner{padding:0 1.5rem 1.4rem;font-family:'Manrope',sans-serif;font-size:.875rem;color:#72594a;line-height:1.7;border-top:1px solid rgba(3,39,23,.07);padding-top:1rem;}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr;}}
+
+/* ── Footer ── */
+footer{background:#201b0f;border-radius:1.5rem 1.5rem 0 0;padding:4rem 0 0;position:relative;}
+footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:3px;background:linear-gradient(to right,#c27618,#e8a020,#c27618);border-radius:0 0 4px 4px;}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-brand-logo img{height:72px;width:auto;display:block;margin-bottom:1rem;}
+.footer-brand p{font-family:'Manrope',sans-serif;font-size:.8rem;color:rgba(255,248,241,.5);line-height:1.65;margin-bottom:.5rem;max-width:16rem;}
+.footer-brand{max-width:18rem;}
+.footer-col h5{font-family:'Epilogue',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.25em;color:rgba(255,248,241,.25);margin-bottom:1.25rem;font-weight:700;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+.footer-col ul li a{font-family:'Manrope',sans-serif;font-size:.85rem;color:rgba(255,248,241,.55);transition:color .2s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-buy{display:flex;flex-direction:column;gap:.75rem;}
+.footer-buy-item{display:flex;align-items:center;gap:.75rem;padding:.875rem 1.25rem;border-radius:.875rem;background:rgba(255,255,255,.06);transition:opacity .2s;}
+.footer-buy-item:hover{opacity:.8;}
+.footer-buy-icon{width:28px;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.footer-buy-icon img{width:100%;height:100%;object-fit:contain;}
+.footer-buy-label{font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,248,241,.75);}
+.footer-bottom{max-width:1280px;margin:0 auto;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-family:'Manrope',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,248,241,.2);}
+
+/* ── Shipping Modal ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(3,39,23,.55);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;padding:1.5rem;}
+.modal-overlay.open{display:flex;animation:modalIn .25s ease;}
+@keyframes modalIn{from{opacity:0}to{opacity:1}}
+.modal-box{background:#fff8f1;border-radius:2rem;max-width:520px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,.2);}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 2rem 1.25rem;}
+.modal-title{font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.4rem;color:#032717;}
+.modal-close{width:36px;height:36px;border-radius:50%;background:#f2e7d3;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.modal-close:hover{background:#e3d9c5;}
+.modal-body{padding:0 2rem 2rem;font-family:'Manrope',sans-serif;font-size:.9rem;color:#72594a;line-height:1.75;}
+.modal-body h4{font-family:'Epilogue',sans-serif;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.15em;color:#032717;margin:1.5rem 0 .5rem;}
+.modal-body p{margin-bottom:.75rem;}
+.modal-body ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:.75rem;}
+.modal-body ul li{display:flex;align-items:flex-start;gap:.6rem;}
+.modal-body ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;}
+
+/* ── Sticky mobile buy bar ── */
+#mob-buy-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:500;background:#fff8f1;border-top:1px solid rgba(3,39,23,.1);padding:.75rem 1rem;gap:.5rem;box-shadow:0 -4px 24px rgba(3,39,23,.1);transform:translateY(100%);transition:transform .35s ease;}
+#mob-buy-bar.visible{transform:translateY(0);}
+#mob-buy-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.75rem .5rem;border-radius:.75rem;font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;}
+#mob-buy-bar .mbb-amz{background:#1a1a1a;color:#fff;}
+#mob-buy-bar .mbb-blnk{background:#F8CB46;color:#1a1a1a;}
+#mob-buy-bar .mbb-wa{background:#25D366;color:#fff;}
+@media(min-width:901px){#mob-buy-bar{display:none!important;}}
+@media(max-width:900px){#mob-buy-bar{display:flex;}}
+
+/* ── WhatsApp float ── */
+#wa-float{position:fixed;bottom:5.5rem;right:1.25rem;z-index:499;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);cursor:pointer;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease;animation:waPulse 2.5s ease infinite;}
+#wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.55);}
+@media(min-width:901px){#wa-float{bottom:1.5rem;}}
+@keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 0 0 9px rgba(37,211,102,0)}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.v{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+.section-title{opacity:0;transform:translateX(-24px);transition:opacity .65s ease,transform .65s ease;}
+.section-title.v{opacity:1;transform:translateX(0);}
+.hbar{opacity:0;transform:translateX(-20px);transition:opacity .5s ease,transform .5s ease;}
+.hbar.v{opacity:1;transform:translateX(0);}
+.health-bars .hbar:nth-child(2){transition-delay:.12s;}
+.health-bars .hbar:nth-child(3){transition-delay:.24s;}
+.jstep{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.jstep.v{opacity:1;transform:translateY(0);}
+.jstep:nth-child(2){transition-delay:.08s;}
+.jstep:nth-child(3){transition-delay:.16s;}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .nav-links,.nav-wa{display:none!important;}
+  .ham{display:flex!important;}
+  .product-hero-inner{grid-template-columns:1fr;gap:2rem;}
+  .product-hero-img{min-height:280px;order:-1;}
+  .health-grid{grid-template-columns:1fr;gap:2rem;}
+  .promise-wrap{grid-template-columns:1fr;}
+  .journey-grid,.journey-grid-row2{grid-template-columns:repeat(2,1fr);}
+  .journey-grid::before,.journey-grid-row2::before{display:none;}
+  #product-hero{padding:3rem 0 0;}
+}
+@media(max-width:600px){
+  .journey-grid,.journey-grid-row2{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP TICKER -->
+<div class="ticker-wrap" aria-label="Certifications">
+  <div class="ticker-track">
+    <span>FSSAI Lic. No. 11225032000017</span><span>·</span>
+    <span>Certified Organic · Residue Free from Soil to Seal</span><span>·</span>
+    <span>Lab Tested · Every Batch · Zero Chemicals</span><span>·</span>
+    <span>Sulphur Free · No Bleaching · No Shortcuts</span><span>·</span>
+    <span>Sun-Dried · 7 Days · Natural Process</span><span>·</span>
+    <span>FSSAI Lic. No. 11225032000017</span><span>·</span>
+    <span>Certified Organic · Residue Free from Soil to Seal</span><span>·</span>
+    <span>Lab Tested · Every Batch · Zero Chemicals</span><span>·</span>
+    <span>Sulphur Free · No Bleaching · No Shortcuts</span><span>·</span>
+    <span>Sun-Dried · 7 Days · Natural Process</span><span>·</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img data-src="TNF_Black" src="" alt="The Native Folks" loading="lazy"/></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#range">Shop</a>
+      <a href="index.html#why-us">Why Us</a>
+      <a href="index.html#our-story">Our Story</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="nav-wa">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <div class="nav-buy">
+        <button class="nav-buy-btn" onclick="toggleDD()">Buy Now <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg></button>
+        <div id="nav-dd" class="nav-dropdown">
+          <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=nav_amazon" target="_blank" class="dd-item">
+            <div class="dd-icon" style="background:#fff;border:1px solid #f2e7d3;"><img data-src="Amazon_full" src="" alt="Amazon" style="width:26px;height:26px;object-fit:contain;" loading="lazy"/></div>
+            <div><div class="dd-label">Amazon</div><div class="dd-sub">Ships in 1–2 days</div></div>
+          </a>
+          <div class="dd-sep"></div>
+          <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=nav_blinkit" target="_blank" class="dd-item">
+            <div class="dd-icon"><img data-src="Blinkit" src="" alt="Blinkit" style="width:32px;height:32px;object-fit:contain;" loading="lazy"/></div>
+            <div><div class="dd-label">Blinkit</div><div class="dd-sub">10-min delivery</div></div>
+          </a>
+          <div class="dd-sep"></div>
+          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="dd-item">
+            <div class="dd-icon" style="background:#25D366;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div><div class="dd-label">WhatsApp</div><div class="dd-sub">Direct order</div></div>
+          </a>
+        </div>
+      </div>
+      <button class="ham" onclick="toggleMob()" id="ham-btn">
+        <span id="h1"></span><span id="h2"></span><span id="h3"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="index.html#range" onclick="closeMob()">Shop</a>
+    <a href="index.html#why-us" onclick="closeMob()">Why Us</a>
+    <a href="index.html#our-story" onclick="closeMob()">Our Story</a>
+    <div class="mob-btns">
+      <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Amazon</a>
+      <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;" loading="lazy"/></span>Blinkit</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT COVER HERO -->
+<section id="product-hero">
+  <div class="product-hero-inner">
+    <!-- Image -->
+    <div class="product-hero-img">
+      <div class="wax-badge"><span>Residue<br/>Free</span></div>
+      <img data-src="RAISIN" src="" alt="Sun-Dried Raisins — The Native Folks" loading="eager"/>
+    </div>
+    <!-- Content -->
+    <div class="product-hero-content">
+      <div class="product-breadcrumb"><a href="index.html">Home</a> / <a href="index.html#range">Our Range</a> / Sun-Dried Raisins</div>
+      <h1 class="product-name">Sun-Dried<br/>Raisins</h1>
+      <div class="product-origin">Nashik Valley, Maharashtra · Organic</div>
+      <p class="product-desc">Naturally sun-dried over 7+ days with zero sulphur, zero bleaching, and no chemical treatment. Dark, chewy, and genuinely sweet — the way raisins used to taste.</p>
+      <div class="product-price-row">
+        <div class="product-price">₹349</div>
+        <div class="product-weight">200g · Resealable Pack</div>
+      </div>
+      <!-- Batch counter -->
+      <div class="batch-bar-wrap">
+        <div class="batch-meta">
+          <span class="batch-label"><span class="batch-live-dot"></span>Today's Stock</span>
+          <span class="batch-count"><span id="batch-remaining">—</span> packs left</span>
+        </div>
+        <div class="batch-track"><div class="batch-fill" id="batch-fill"></div></div>
+        <div class="batch-urgency" id="batch-urgency"></div>
+      </div>
+      <!-- Buy buttons -->
+      <div class="product-btns">
+        <div class="product-btns-row">
+          <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=raisinpage_amazon" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Buy on Amazon</a>
+          <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=raisinpage_blinkit" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;" loading="lazy"/></span>Buy on Blinkit</a>
+        </div>
+        <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Order on WhatsApp</a>
+      </div>
+      <div class="product-trust">
+        <div class="trust-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#032717" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>FSSAI Licensed</div>
+        <div class="trust-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#032717" stroke-width="2" stroke-linecap="round"><path d="M9 3h6M10 3v6l-4 9a1 1 0 00.9 1.4h10.2a1 1 0 00.9-1.4L14 9V3"/></svg>Lab Tested</div>
+        <div class="trust-pill">Residue ≤0.1%</div>
+        <div class="trust-pill">Sulphur Free</div>
+        <div class="trust-pill">7-Day Sun-Dried</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTH IN EVERY HANDFUL -->
+<div class="section" style="background:#fef2de;">
+  <div class="section-inner">
+    <div class="health-grid">
+      <div class="reveal">
+        <h2 class="section-title" style="margin-bottom:1rem;">Health in<br/>Every Handful</h2>
+        <p style="font-family:'Manrope',sans-serif;font-size:.95rem;color:#72594a;margin-bottom:1.75rem;line-height:1.7;">Naturally sun-dried raisins, free from sulphur and chemicals — delivering real nutrition without shortcuts.</p>
+        <div class="health-bars">
+          <div class="hbar" style="background:#e8a020;"><div class="hbar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><p>Rich in Iron, Potassium &amp; Antioxidants</p></div>
+          <div class="hbar" style="background:#c27618;"><div class="hbar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 014 13H2a10 10 0 0018 0h-2a7 7 0 01-7 7z"/><path d="M12 13V3s4 3 4 8"/><path d="M12 13V3S8 6 8 11"/></svg></div><p>100% Natural &amp; Chemical-free</p></div>
+          <div class="hbar" style="background:#a85c0a;"><div class="hbar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 9.36 4 13.08 4 16a8 8 0 0016 0c0-2.92-2.48-6.64-8-14z"/></svg></div><p>Naturally Sweet — No additives or preservatives</p></div>
+        </div>
+      </div>
+      <div class="reveal d1 health-right-col">
+        <div class="health-img-card">
+          <div class="health-img-inner">
+            <img data-src="RAISIN_HERO" src="" alt="Sun-Dried Raisins in hand" class="health-img-main" loading="lazy"/>
+          </div>
+          <!-- All 3 badges: same white style, consistent positions -->
+          <!-- 3 badges in a row along the bottom -->
+          <div style="position:absolute;bottom:-1.25rem;left:0;right:0;display:flex;justify-content:center;gap:1rem;z-index:10;padding:0 1.5rem;">
+            <div class="health-float-badge" style="position:relative;top:auto;left:auto;right:auto;bottom:auto;transform:none;flex-shrink:0;">
+              <div class="hfb-num" data-target="0" data-suffix="">0</div>
+              <div class="hfb-lbl">Additives</div>
+            </div>
+            <div class="health-float-badge" style="position:relative;top:auto;left:auto;right:auto;bottom:auto;transform:none;flex-shrink:0;">
+              <div class="hfb-num" data-target="0" data-suffix="">0</div>
+              <div class="hfb-lbl">Sulphur</div>
+            </div>
+            <div class="health-float-badge" style="position:relative;top:auto;left:auto;right:auto;bottom:auto;transform:none;flex-shrink:0;">
+              <div class="hfb-num" data-target="100" data-suffix="%">0%</div>
+              <div class="hfb-lbl">Organic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FROM SOIL TO SEAL -->
+<div class="section" id="process" style="background:#fef2de;">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:3rem;">
+      <h2 class="section-title">From Soil to Seal</h2>
+      <p class="section-sub" style="margin-bottom:0;font-style:italic;">A Journey of Purity</p>
+    </div>
+    <div class="reveal">
+      <!-- Row 1 -->
+      <div class="journey-grid">
+        <div class="jstep">
+          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V12M12 12C10 8 6 6 3 7c1 4 5 7 9 5ZM12 12C14 8 18 6 21 7c-1 4-5 7-9 5Z"/></svg>
+          </div>
+          <div class="jstep-num">01</div>
+          <p>Soil enriched with Jeevamrit &amp; natural nutrients</p>
+        </div>
+        <div class="jstep">
+          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="14" r="2.5"/><circle cx="15" cy="14" r="2.5"/><circle cx="12" cy="10" r="2.5"/><path d="M12 7.5V4M10 4h4"/></svg>
+          </div>
+          <div class="jstep-num">02</div>
+          <p>Grapes grown naturally — no pesticides, no chemicals</p>
+        </div>
+        <div class="jstep">
+          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l-2 11h16L18 9M2 9h20M8 9l2-5M16 9l-2-5"/></svg>
+          </div>
+          <div class="jstep-num">03</div>
+          <p>Handpicked at peak ripeness</p>
+        </div>
+      </div>
+      <!-- Gap between rows -->
+      <div style="height:1rem;"></div>
+      <!-- Row 2 -->
+      <div class="journey-grid-row2">
+        <div class="jstep">
+          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M17.66 6.34l-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
+          </div>
+          <div class="jstep-num">04</div>
+          <p>Sun-dried over 7+ days — no sulphur, no shortcuts</p>
+        </div>
+        <div class="jstep">
+          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-4 9a1 1 0 00.9 1.4h10.2a1 1 0 00.9-1.4L14 9V3"/></svg>
+          </div>
+          <div class="jstep-num">05</div>
+          <p>Lab-tested for purity, every batch</p>
+        </div>
+        <div class="jstep highlight">
+          <div class="jstep-icon" style="background:#032717;color:#fff;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16Z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+          </div>
+          <div class="jstep-num">06</div>
+          <p>Sealed in premium packs to lock freshness</p>
+        </div>
+      </div>
+    </div>
+    <div class="journey-tagline reveal" style="margin-top:2.5rem;">
+      <p>This journey is what makes us</p>
+      <p>Raw. Real. Rooted.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OUR PROMISE YOUR PEACE OF MIND -->
+<div class="section" id="promise" style="background:#032717;">
+  <div class="section-inner">
+    <div class="promise-wrap">
+      <div class="reveal">
+        <h2 class="section-title" style="color:#fff;margin-bottom:2rem;">Our Promise.<br/>Your Peace of Mind.</h2>
+        <div class="promise-list">
+          <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Complete Satisfaction Guarantee</span></div>
+          <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Resealable, moisture-barrier packs</span></div>
+          <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Ships fresh from <strong>Mumbai, Pune &amp; Bangalore</strong></span></div>
+          <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Clinically residue-tested every batch</span></div>
+        </div>
+        <div class="promise-btns">
+          <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=promise_amazon" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.18)'" onmouseout="this.style.background='rgba(255,255,255,.1)'">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:#fff;border-radius:3px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:16px;height:16px;object-fit:contain;" loading="lazy"/></span>Amazon
+          </a>
+          <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=promise_blinkit" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:filter .2s;" onmouseover="this.style.filter='brightness(.95)'" onmouseout="this.style.filter='none'">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:3px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:20px;height:20px;object-fit:contain;" loading="lazy"/></span>Blinkit
+          </a>
+          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="reveal d1 promise-visual">
+        <div class="promise-card-stack">
+          <div class="promise-card-shadow"></div>
+          <div class="promise-card-main">
+            <img data-src="PROMISE_IMG" src="" alt="Native Folks Sun-Dried Raisins" class="promise-card-img" loading="lazy"/>
+            <div class="promise-card-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <span>Satisfaction Guaranteed</span>
+            </div>
+          </div>
+          <div class="promise-year-badge">
+            <span style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.1rem;color:#032717;line-height:1;">100%</span>
+            <span style="font-family:'Manrope',sans-serif;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#032717;margin-top:2px;">Natural</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section" id="faq" style="background:#fff8f1;">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:.5rem;">
+      <h2 class="section-title" style="text-align:center;">Questions We Love Getting</h2>
+      <p class="section-sub" style="text-align:center;margin-bottom:0;">Everything you want to know before your first bite.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What makes your raisins different from store-bought ones?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Most commercial raisins are sulphur-treated to achieve that golden colour and preserve shelf life. Ours are 100% sun-dried over 7 days with zero sulphur, zero bleaching, and no chemical treatment — which is why they're naturally dark and taste like real fruit. We also grow in Jeevamrit-enriched soil, which means richer flavour from the ground up.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is any sugar added to these raisins?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">No, there is no added sugar. The sweetness comes naturally from the grapes, and the product is lab-tested to ensure purity and no additives.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Why are these raisins darker than regular raisins?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Most commercially available raisins are treated with sulphur to make them look bright and uniform. Our raisins are naturally sun-dried without any chemical treatment, which is why they appear slightly darker — a sign of purity.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Are these raisins safe for daily consumption?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, they are 100% natural, chemical-free, and safe for daily consumption, including for kids and families.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do these raisins contain sulphur or preservatives?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">No. These raisins are sulphur-free, preservative-free, and chemical-free.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How should I store these raisins?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Store in a cool, dry place and keep the pack sealed after opening. For best freshness, you can refrigerate after opening.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Where are these raisins sourced from?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Our raisins are sourced from farms in Jamakhandi, Karnataka, and processed using traditional sun-drying methods.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Why do these raisins taste different from market ones?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Since our raisins are not chemically treated or artificially sweetened, they have a more natural, balanced sweetness compared to regular market raisins.</div></div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:3.5rem;text-align:center;padding:2.5rem;background:#032717;border-radius:2rem;">
+      <p style="font-family:'Epilogue',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.25em;color:rgba(255,255,255,.35);margin-bottom:.75rem;">Still have questions?</p>
+      <h3 style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(1.2rem,3vw,1.8rem);color:#fff;margin-bottom:1.5rem;">We're one message away.</h3>
+      <a href="https://wa.me/919172658066?text=Hi%21%20I%20have%20a%20question%20about%20The%20Native%20Folks%20products." target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 2rem;border-radius:.875rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- SHIPPING MODAL -->
+<div class="modal-overlay" id="shipping-modal" onclick="closeModal('shipping-modal')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-head">
+      <div class="modal-title">Shipping Info</div>
+      <button class="modal-close" onclick="closeModal('shipping-modal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#032717" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <h4>Delivery Channels</h4>
+      <ul>
+        <li>Amazon Prime — delivered in 1–2 days across India</li>
+        <li>Blinkit — under 10 minutes in Mumbai, Pune &amp; Bangalore</li>
+        <li>WhatsApp orders — dispatched within 24 hours, delivered in 2–3 business days</li>
+      </ul>
+      <h4>Packaging</h4>
+      <p>All orders are shipped in premium resealable moisture-barrier packs designed to preserve freshness.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-logo"><img data-src="TNF_Black" src="" alt="The Native Folks" style="height:72px;width:auto;filter:invert(1) brightness(1.8);" loading="lazy"/></div>
+      <p>Raw. Real. Rooted.<br/>Preserving India's artisanal agricultural heritage for the global palate.</p>
+      <div style="display:flex;gap:.6rem;margin-top:1.25rem;">
+        <a href="https://www.instagram.com/thenativefolksofficial/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,248,241,.5);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,248,241,.5)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/TheNativeFolks" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,248,241,.5);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,248,241,.5)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Pages</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#our-story">Our Story</a></li>
+        <li><a href="index.html#why-us">Why Native?</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#" onclick="openModal('shipping-modal');return false;">Shipping</a></li>
+        <li><a href="https://wa.me/919172658066?text=Hi%21%20I%20have%20a%20question%20about%20The%20Native%20Folks%20products." target="_blank">Contact Us</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Buy Now</h5>
+      <div class="footer-buy">
+        <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=footer_amazon" target="_blank" class="footer-buy-item">
+          <div class="footer-buy-icon" style="background:#fff;"><img data-src="Amazon_full" src="" alt="Amazon" style="width:24px;height:24px;object-fit:contain;" loading="lazy"/></div>
+          <div class="footer-buy-label">Amazon</div>
+        </a>
+        <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=footer_blinkit" target="_blank" class="footer-buy-item">
+          <div class="footer-buy-icon"><img data-src="Blinkit" src="" alt="Blinkit" style="width:28px;height:28px;object-fit:contain;" loading="lazy"/></div>
+          <div class="footer-buy-label">Blinkit</div>
+        </a>
+        <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="footer-buy-item">
+          <div class="footer-buy-icon" style="background:#25D366;color:#fff;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+          <div class="footer-buy-label">WhatsApp</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 The Native Folks. Artisanal Heritage Preserved.</div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" id="wa-float" aria-label="Order on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Mobile buy bar -->
+<div id="mob-buy-bar">
+  <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/" target="_blank" class="mbb-amz">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#fff;border-radius:3px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:14px;height:14px;object-fit:contain;" loading="lazy"/></span>Amazon
+  </a>
+  <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617" target="_blank" class="mbb-blnk">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:3px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Blinkit
+  </a>
+  <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="mbb-wa">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp
+  </a>
+</div>
+
+<script>
+var IMGS = {};
+function injectImgs(){
+  document.querySelectorAll('[data-src]').forEach(function(el){
+    var k = el.getAttribute('data-src');
+    if(IMGS[k]) el.src = IMGS[k];
+  });
+}
+
+function toggleDD(){document.getElementById('nav-dd').classList.toggle('open');}
+document.addEventListener('click',function(e){
+  var btn=document.querySelector('.nav-buy-btn');
+  var dd=document.getElementById('nav-dd');
+  if(btn&&dd&&!btn.contains(e.target)&&!dd.contains(e.target)) dd.classList.remove('open');
+});
+
+function toggleMob(){
+  var m=document.getElementById('mobile-menu');
+  var open=m.style.display!=='flex';
+  m.style.display=open?'flex':'none';
+  var h1=document.getElementById('h1'),h2=document.getElementById('h2'),h3=document.getElementById('h3');
+  if(open){h1.style.transform='rotate(45deg) translate(5px,5px)';h2.style.opacity='0';h3.style.transform='rotate(-45deg) translate(5px,-5px)';}
+  else{h1.style.transform='';h2.style.opacity='';h3.style.transform='';}
+}
+function closeMob(){
+  document.getElementById('mobile-menu').style.display='none';
+  document.getElementById('h1').style.transform='';document.getElementById('h2').style.opacity='';document.getElementById('h3').style.transform='';
+}
+
+// Scroll
+window.addEventListener('scroll',function(){
+  var mbb=document.getElementById('mob-buy-bar');
+  if(mbb){
+    if(window.scrollY>200) mbb.classList.add('visible');
+    else mbb.classList.remove('visible');
+  }
+},{passive:true});
+
+// Reveal
+var revealEls=document.querySelectorAll('.reveal,.section-title,.hbar,.jstep,.promise-item');
+var revealIO=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');}});
+},{threshold:0.12});
+revealEls.forEach(function(el){revealIO.observe(el);});
+
+// Batch counter
+(function(){
+  var MAX=200;
+  var DROP_PER_INTERVAL=[5,4,6,3,5,4,7,3,6,4,5,3,6,4,5,3,7,4,5,3,6,4,5,3,7];
+  var now=new Date();
+  var midnight=new Date(now);midnight.setHours(0,0,0,0);
+  var msPerInterval=30*60*1000;
+  var elapsed=now-midnight;
+  var intervalsPassed=Math.floor(elapsed/msPerInterval);
+  var remaining=MAX;
+  for(var i=0;i<Math.min(intervalsPassed,DROP_PER_INTERVAL.length);i++){remaining-=DROP_PER_INTERVAL[i];}
+  remaining=Math.max(remaining,12);
+  var pct=Math.round((remaining/MAX)*100);
+  var rEl=document.getElementById('batch-remaining');
+  var fEl=document.getElementById('batch-fill');
+  var uEl=document.getElementById('batch-urgency');
+  if(rEl) rEl.textContent=remaining;
+  if(fEl) fEl.style.width=pct+'%';
+  if(uEl){
+    if(remaining<30) uEl.textContent='Almost gone — order now to secure yours';
+    else if(remaining<60) uEl.textContent='Selling fast today';
+    else uEl.textContent='';
+  }
+})();
+
+// Counter animation for health badges
+(function(){
+  var counters=document.querySelectorAll('.hfb-num[data-target]');
+  if(!counters.length) return;
+  var counterIO=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      var target=parseInt(el.getAttribute('data-target'));
+      var suffix=el.getAttribute('data-suffix')||'';
+      var duration=1200;
+      var start=null;
+      if(target===0){el.textContent='0'+suffix;counterIO.unobserve(el);return;}
+      function step(ts){
+        if(!start) start=ts;
+        var progress=Math.min((ts-start)/duration,1);
+        var eased=1-Math.pow(1-progress,3);
+        el.textContent=Math.floor(eased*target)+suffix;
+        if(progress<1){requestAnimationFrame(step);}
+        else{el.textContent=target+suffix;}
+      }
+      requestAnimationFrame(step);
+      counterIO.unobserve(el);
+    });
+  },{threshold:0.5});
+  counters.forEach(function(c){counterIO.observe(c);});
+})();
+
+// FAQ
+function toggleFaq(btn){
+  var item=btn.closest('.faq-item');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+
+// Modals
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(function(m){m.classList.remove('open');document.body.style.overflow='';});});
+
+// Images
+IMGS["TNF_Black"]   = "https://ik.imagekit.io/tnf/TNF_Black.png";
+IMGS["TNF_BG2"]     = "https://ik.imagekit.io/tnf/TNF_BG2.jpg";
+IMGS["RAISIN"]      = "https://ik.imagekit.io/tnf/RAISIN.jpg";
+IMGS["RAISIN_HERO"] = "https://ik.imagekit.io/tnf/Gemini_Generated_Image_t5blzmt5blzmt5bl.png";
+IMGS["PROMISE_IMG"] = "https://ik.imagekit.io/tnf/DSC00832.jpg";
+IMGS["Amazon_full"] = "https://ik.imagekit.io/tnf/Amazon_icon%20(1).png";
+IMGS["Blinkit"]     = "https://ik.imagekit.io/tnf/blinkit-logo-vector_logoshape.com.png";
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',injectImgs);
+} else {
+  injectImgs();
+}
+</script>
+</body>
+</html>

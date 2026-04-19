@@ -25,7 +25,6 @@
 <meta name="twitter:title" content="The Native Folks | Raw. Real. Rooted."/>
 <meta name="twitter:description" content="Sun-dried raisins from Nashik Valley. No sulphur, no bleaching, no shortcuts."/>
 <meta name="twitter:image" content="https://ik.imagekit.io/tnf/TNF_BG2.jpg?updatedAt=1775045944912"/>
-<!-- WhatsApp uses og: tags — already covered above -->
 <link rel="canonical" href="https://thenativefolks.com/"/>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <!-- Google Analytics -->
@@ -45,17 +44,6 @@ img{max-width:100%;}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-track{cursor:default;}
 .ticker-wrap:hover .ticker-track{animation-play-state:paused;}
-
-/* ── Cert Ticker (authority strip) ── */
-.cert-ticker-wrap{overflow:hidden;background:#1b3d2b;color:#fff;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);}
-.cert-ticker-track{display:flex;gap:0;animation:certTicker 28s linear infinite;width:max-content;white-space:nowrap;}
-@keyframes certTicker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.cert-ticker-wrap:hover .cert-ticker-track{animation-play-state:paused;}
-.cert-pill{display:inline-flex;align-items:center;justify-content:center;gap:.75rem;padding:0 2.5rem;border-right:1px solid rgba(255,255,255,.12);}
-.cert-pill-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.cert-pill-text{display:flex;flex-direction:column;}
-.cert-pill-title{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#fff;}
-.cert-pill-sub{font-family:'Manrope',sans-serif;font-size:9px;color:rgba(255,255,255,.5);margin-top:1px;}
 
 /* ── Nav ── */
 #nav{position:sticky;top:38px;z-index:90;background:rgba(255,248,241,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(3,39,23,.07);}
@@ -88,17 +76,15 @@ img{max-width:100%;}
 
 /* ── Hero ── */
 #hero{position:relative;min-height:90vh;display:flex;align-items:flex-start;overflow:hidden;}
-/* grain overlay */
 #hero::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.035;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size:180px 180px;}
-/* ambient warm glow bottom-left */
 #hero::after{content:'';position:absolute;bottom:-10%;left:-5%;width:50%;height:70%;background:radial-gradient(ellipse,rgba(194,118,24,.13) 0%,transparent 70%);z-index:1;pointer-events:none;}
 #hero-bg{position:absolute;inset:0;}
 #hero-bg img{width:100%;height:100%;object-fit:cover;object-position:right center;display:block;}
 #hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(255,248,241,1) 0%,rgba(255,248,241,.9) 20%,rgba(255,248,241,.4) 38%,rgba(255,248,241,.0) 55%,transparent 100%);}
-.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:3rem 2rem 4rem 4rem;width:100%;}
-.hero-badge{display:inline-block;padding:.35rem 1rem;border-radius:999px;background:#fef2de;color:#72594a;font-family:'Epilogue',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.25em;margin-bottom:1.5rem;}
+.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:2rem 2rem 4rem 4rem;width:100%;}
+.hero-badge{display:inline-block;padding:.35rem 1rem;border-radius:999px;background:#fef2de;color:#72594a;font-family:'Epilogue',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.25em;margin-bottom:1.25rem;}
 .hero-h1{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,5.5rem);line-height:.9;color:#032717;margin-bottom:1.25rem;}
 .hero-h1 em{color:#72594a;font-style:italic;}
 .hero-sub{font-family:'Manrope',sans-serif;font-size:1.1rem;color:#72594a;max-width:26rem;line-height:1.65;margin-bottom:.5rem;}
@@ -111,12 +97,23 @@ img{max-width:100%;}
 .section-title{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(2rem,5vw,3.2rem);color:#032717;margin-bottom:.5rem;}
 .section-sub{font-family:'Manrope',sans-serif;font-size:1rem;color:#72594a;margin-bottom:3rem;}
 
-/* ── Product grid — 3 products, centered ── */
+/* ── Our Story Section ── */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.story-label{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:#c27618;margin-bottom:1rem;}
+.story-heading{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,2.8rem);color:#032717;line-height:1.05;margin-bottom:1.75rem;}
+.story-body{display:flex;flex-direction:column;gap:.875rem;}
+.story-body p{font-family:'Manrope',sans-serif;font-size:.975rem;color:#72594a;line-height:1.8;}
+.story-body p strong{color:#032717;}
+.story-logo-side{display:flex;align-items:center;justify-content:center;}
+.story-logo-wrap{position:relative;width:100%;max-width:340px;}
+.story-logo-bg{position:absolute;inset:-2rem;background:radial-gradient(ellipse at center,rgba(194,118,24,.1) 0%,transparent 70%);pointer-events:none;}
+.story-logo-img{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 32px rgba(3,39,23,.12));}
+
+/* ── Product grid — 3 products ── */
 .products-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
 .pcard{background:#fef2de;border-radius:1.5rem;padding:2rem;transition:transform .35s,box-shadow .35s;position:relative;}
 .pcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(3,39,23,.09);}
 .pcard-img{height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:1rem;margin-bottom:1.25rem;}
-/* amber radial glow for live product */
 .pcard-img.live::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(232,160,32,.22) 0%,rgba(194,118,24,.08) 45%,transparent 75%);pointer-events:none;z-index:1;}
 .pcard-img.live img{position:relative;z-index:2;}
 .pcard-img img{max-height:100%;max-width:100%;object-fit:contain;transition:transform .5s;}
@@ -129,34 +126,6 @@ img{max-width:100%;}
 .pcard-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
 .pcard-btns{display:flex;flex-direction:column;gap:.5rem;}
 .pcard-btns-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
-
-/* ── Health image card ── */
-.health-img-card{position:relative;border-radius:2rem;overflow:visible;width:100%;aspect-ratio:16/9;box-shadow:0 24px 64px rgba(3,39,23,.15);}
-.health-img-inner{border-radius:2rem;overflow:hidden;width:100%;height:100%;position:relative;}
-.health-img-main{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform .6s ease;}
-.health-img-card:hover .health-img-main{transform:scale(1.03);}
-/* Circle badges */
-.health-float-badge{position:absolute;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.13);border:2px solid rgba(255,255,255,.7);}
-.hfb-num{font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.3rem;color:#032717;line-height:1;}
-.hfb-lbl{font-family:'Manrope',sans-serif;font-size:7.5px;text-transform:uppercase;letter-spacing:.14em;color:#72594a;margin-top:3px;}
-.hfb-accent{background:#032717 !important;border-color:#1b3d2b !important;}
-.hfb-accent .hfb-num{color:#F8CB46;}
-.hfb-accent .hfb-lbl{color:rgba(255,255,255,.55);}
-@media(max-width:900px){.health-img-card{aspect-ratio:4/3;}.health-float-badge{width:64px;height:64px;}.hfb-num{font-size:1.1rem;}}
-
-/* ── Health section ── */
-.health-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}.health-right-col{display:flex;flex-direction:column;gap:1rem;align-self:start;}
-.health-bars{border-radius:1rem;overflow:hidden;}
-.hbar{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.5rem;}
-.hbar-icon{font-size:1.1rem;flex-shrink:0;}
-.hbar p{font-family:'Manrope',sans-serif;font-size:.875rem;font-weight:600;color:#fff;}
-.health-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem;}
-.stat{border-radius:1rem;padding:1rem;text-align:center;background:#72594a;}
-.stat-num{font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;transition:all .1s;}
-.stat-lbl{font-family:'Manrope',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.5);margin-top:2px;}
-
-
-
 
 /* ── Compare ── */
 .compare-wrap{display:flex;flex-direction:row;gap:1.5rem;align-items:stretch;}
@@ -177,55 +146,6 @@ img{max-width:100%;}
 .compare-col.others .compare-row-item p{color:#72594a;}
 .compare-col.ours .compare-row-item p{color:#fff;}
 .compare-tagline{text-align:center;margin-top:2.5rem;font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(1.1rem,3vw,1.6rem);color:#032717;}
-
-/* ── Journey ── */
-.journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:2.5rem;position:relative;}
-.journey-grid::before{content:'';position:absolute;top:50px;left:calc(16.666% + 26px);right:calc(16.666% + 26px);height:2px;background:linear-gradient(to right,#c27618,#e8a020,#c27618);z-index:0;pointer-events:none;}
-.journey-grid::after{content:'';position:absolute;top:calc(50% + 26px - 1rem);left:calc(50% - 1px);height:2rem;width:2px;background:linear-gradient(to bottom,#c27618,#e8a020);z-index:0;pointer-events:none;display:none;}
-.journey-row2-connector{width:2px;height:2rem;background:linear-gradient(to bottom,#c27618,#e8a020);margin:0 auto;position:relative;z-index:1;}
-.journey-grid-row2{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
-.journey-grid-row2::before{content:'';position:absolute;top:50px;left:calc(16.666% + 26px);right:calc(16.666% + 26px);height:2px;background:linear-gradient(to right,#c27618,#e8a020,#c27618);z-index:0;pointer-events:none;}
-.jstep{background:#fef3de;border-radius:1.25rem;padding:1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.75rem;margin:.5rem;position:relative;z-index:1;}
-.jstep-icon{width:52px;height:52px;border-radius:50%;background:#f2e7d3;border:3px solid #e8c97a;display:flex;align-items:center;justify-content:center;position:relative;z-index:2;}
-.jstep-num{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#c27618;}
-.jstep p{font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;line-height:1.5;}
-.jstep.highlight .jstep-icon{background:#032717;border-color:#fef3de;}
-.journey-tagline{text-align:center;}
-.journey-tagline p:first-child{font-family:'Epilogue',sans-serif;font-weight:700;font-size:1.1rem;color:#032717;}
-.journey-tagline p:last-child{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(1.5rem,4vw,2.5rem);color:#032717;}
-
-/* ── Promise ── */
-.promise-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-.promise-list{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:2.5rem;}
-.promise-item{display:flex;align-items:center;gap:.875rem;}
-.promise-star{color:#F8CB46;font-size:1.1rem;flex-shrink:0;}
-.promise-item span{font-family:'Manrope',sans-serif;font-size:.95rem;color:rgba(255,255,255,.85);}
-.promise-item strong{color:#fff;}
-.promise-img{border-radius:1.5rem;overflow:hidden;height:400px;}
-.promise-img img{width:100%;height:100%;object-fit:cover;}
-/* ── Promise creative image ── */
-.promise-visual{display:flex;align-items:center;justify-content:center;}
-.promise-card-stack{position:relative;width:100%;max-width:440px;}
-.promise-card-shadow{position:absolute;inset:0;background:rgba(255,255,255,.08);border-radius:2rem;transform:rotate(4deg) translateY(8px);border:1px solid rgba(255,255,255,.1);}
-.promise-card-main{position:relative;border-radius:2rem;overflow:hidden;aspect-ratio:3/4;box-shadow:0 32px 80px rgba(0,0,0,.35);}
-.promise-card-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s ease;}
-.promise-card-main:hover .promise-card-img{transform:scale(1.04);}
-.promise-card-label{position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;background:linear-gradient(to top,rgba(3,39,23,.9) 0%,rgba(3,39,23,.4) 60%,transparent 100%);display:flex;align-items:center;gap:.6rem;}
-.promise-card-label span{font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#fff;}
-.promise-year-badge{position:absolute;top:-1.25rem;right:-1.25rem;width:72px;height:72px;border-radius:50%;background:#F8CB46;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(248,203,70,.4);z-index:2;}
-.promise-btns{display:flex;flex-wrap:wrap;gap:.75rem;}
-
-/* ── Manifesto ── */
-.manifesto{text-align:center;padding:7rem 2rem;position:relative;overflow:hidden;background:#fff8f1;}
-
-
-/* thin border frame */
-.manifesto-frame{max-width:760px;margin:0 auto;border:1px solid rgba(3,39,23,.1);border-radius:2rem;padding:3.5rem 3rem;position:relative;z-index:1;}
-.manifesto-quote{font-family:'Epilogue',sans-serif;font-weight:900;font-style:italic;font-size:clamp(1.4rem,3.5vw,2.5rem);color:#032717;line-height:1.2;margin-bottom:2rem;}
-.manifesto-attr{display:flex;align-items:center;justify-content:center;gap:.75rem;}
-.manifesto-dot{width:28px;height:28px;border-radius:50%;background:#f2e7d3;display:flex;align-items:center;justify-content:center;}
-.manifesto-dot::after{content:'';width:10px;height:10px;border-radius:50%;background:#72594a;display:block;}
-.manifesto-label{font-family:'Epilogue',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.25em;color:#72594a;font-weight:700;}
 
 /* ── Footer ── */
 footer{background:#201b0f;border-radius:1.5rem 1.5rem 0 0;padding:4rem 0 0;position:relative;}
@@ -248,87 +168,41 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 .footer-bottom{max-width:1280px;margin:0 auto;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;}
 .footer-copy{font-family:'Manrope',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,248,241,.2);}
 
-/* ── Responsive ── */
+/* ── Testimonials ── */
+.reviews-section{background:#032717;padding:5rem 0;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+@media(max-width:900px){.reviews-grid{grid-template-columns:1fr;}}
+
+/* ── Batch counter ── */
+.batch-bar-wrap{margin-bottom:1rem;}
+.batch-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem;}
+.batch-label{font-family:'Manrope',sans-serif;font-size:.72rem;color:#72594a;text-transform:uppercase;letter-spacing:.1em;}
+.batch-count{font-family:'Epilogue',sans-serif;font-size:.8rem;font-weight:700;color:#032717;}
+.batch-track{height:5px;background:rgba(3,39,23,.12);border-radius:999px;overflow:hidden;}
+.batch-fill{height:100%;background:linear-gradient(to right,#c27618,#e8a020);border-radius:999px;transition:width .6s ease;}
+.batch-urgency{font-family:'Manrope',sans-serif;font-size:.7rem;color:#c27618;margin-top:.35rem;min-height:1rem;}
+.batch-live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:.4rem;vertical-align:middle;animation:livePulse 1.8s ease infinite;}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.45;transform:scale(.7);}}
+
+/* ── Shipping Modal ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(3,39,23,.55);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;padding:1.5rem;}
+.modal-overlay.open{display:flex;animation:modalIn .25s ease;}
+@keyframes modalIn{from{opacity:0}to{opacity:1}}
+.modal-box{background:#fff8f1;border-radius:2rem;max-width:520px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,.2);}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 2rem 1.25rem;}
+.modal-title{font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.4rem;color:#032717;}
+.modal-close{width:36px;height:36px;border-radius:50%;background:#f2e7d3;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.modal-close:hover{background:#e3d9c5;}
+.modal-body{padding:0 2rem 2rem;font-family:'Manrope',sans-serif;font-size:.9rem;color:#72594a;line-height:1.75;}
+.modal-body h4{font-family:'Epilogue',sans-serif;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.15em;color:#032717;margin:1.5rem 0 .5rem;}
+.modal-body p{margin-bottom:.75rem;}
+.modal-body ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:.75rem;}
+.modal-body ul li{display:flex;align-items:flex-start;gap:.6rem;}
+.modal-body ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;}
+
 /* ── Mobile hero image component ── */
-.hero-mob-img-wrap{display:none;} /* hidden on desktop */
+.hero-mob-img-wrap{display:none;}
 .hero-mob-img{width:100%;display:block;object-fit:cover;object-position:right center;}
-
-@media(max-width:900px){
-  /* Hero becomes a flex column on mobile */
-  #hero{
-    min-height:unset;
-    flex-direction:column;
-    align-items:stretch;
-    padding-bottom:0;
-  }
-  /* Hide the background image on mobile */
-  #hero-bg{display:none;}
-  /* Remove hero grain/glow on mobile */
-  #hero::before,#hero::after{display:none;}
-  /* Text content */
-  .hero-content{
-    padding:2rem 1.5rem 1.75rem;
-    position:relative;
-    z-index:2;
-    background:#fff8f1;
-  }
-  /* Show the mobile image below */
-  .hero-mob-img-wrap{
-    display:block;
-    position:relative;
-    width:100%;
-    flex-shrink:0;
-    overflow:hidden;
-  }
-  .hero-mob-img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    object-position:70% center;
-    display:block;
-  }
-  /* Soft cream fade at top of image so it blends with text area */
-  .hero-mob-img-wrap::before{
-    content:'';
-    position:absolute;
-    top:0;left:0;right:0;
-    height:60px;
-    background:linear-gradient(to bottom,#fff8f1,transparent);
-    z-index:1;
-    pointer-events:none;
-  }
-  #hero{min-height:100svh;}
-  /* stronger gradient on mobile - full cream on left 55% */
-  #hero-bg::after{background:linear-gradient(to right,
-    rgba(255,248,241,1) 0%,
-    rgba(255,248,241,1) 45%,
-    rgba(255,248,241,.7) 58%,
-    rgba(255,248,241,.1) 75%,
-    transparent 100%) !important;}
-  .nav-links,.nav-wa{display:none!important;}
-  .ham{display:flex!important;}
-  .products-grid-3{grid-template-columns:1fr;}
-  .health-grid{grid-template-columns:1fr;gap:2rem;}
-  .health-grid .health-visual{order:-1;}
-  .health-grid .health-visual img{max-height:180px;}
-  .promise-wrap{grid-template-columns:1fr;flex-direction:column;}
-  .compare-wrap{flex-direction:column-reverse;gap:1rem;}
-  .compare-vs{flex-direction:row;}
-  .vs-line{width:60px;height:2px;}
-  
-  .hero-content{padding:2.5rem 1.5rem 3rem;max-width:75%;}
-  .journey-grid,.journey-grid-row2{grid-template-columns:repeat(2,1fr);}
-  .journey-grid::before,.journey-grid-row2::before{display:none;}
-  /* vertical timeline line on mobile */
-  .journey-section-inner{position:relative;}
-  .journey-section-inner::before{content:'';position:absolute;left:calc(50% - 1px);top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#c27618,#e8a020,#c27618);z-index:0;pointer-events:none;}
-}
-@media(max-width:600px){
-  .journey-grid,.journey-grid-row2{grid-template-columns:1fr;}
-
-  .footer-inner{grid-template-columns:1fr;}
-  .compare-wrap{gap:.75rem;}
-}
 
 /* ── Why choose us pattern bg ── */
 .pattern-bg{position:relative;}
@@ -340,11 +214,11 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 .reveal.v{opacity:1;transform:none;}
 .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
 
-/* ── Section headings — slide in from left ── */
+/* ── Section headings ── */
 .section-title{opacity:0;transform:translateX(-24px);transition:opacity .65s ease,transform .65s ease;}
 .section-title.v{opacity:1;transform:translateX(0);}
 
-/* ── Stat cards — scale bounce on entry ── */
+/* ── Stat cards ── */
 .stat{opacity:0;transform:scale(.85);transition:opacity .5s ease,transform .5s cubic-bezier(.34,1.4,.64,1);}
 .stat.v{opacity:1;transform:scale(1);}
 .stat:nth-child(2){transition-delay:.12s;}
@@ -356,15 +230,6 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 .review-card:nth-child(2){transition-delay:.15s;}
 .review-card:nth-child(3){transition-delay:.3s;}
 
-/* ── Journey steps ── */
-.jstep{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
-.jstep.v{opacity:1;transform:translateY(0);}
-.jstep:nth-child(2){transition-delay:.08s;}
-.jstep:nth-child(3){transition-delay:.16s;}
-.jstep:nth-child(4){transition-delay:.24s;}
-.jstep:nth-child(5){transition-delay:.32s;}
-.jstep:nth-child(6){transition-delay:.40s;}
-
 /* ── Compare cols ── */
 .compare-col.others{opacity:0;transform:translateX(-32px);transition:opacity .6s ease,transform .6s ease;}
 .compare-col.ours{opacity:0;transform:translateX(32px);transition:opacity .6s ease,transform .6s ease;}
@@ -373,21 +238,6 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .compare-col.others{transform:translateY(32px);}
   .compare-col.ours{transform:translateY(-32px);}
 }
-
-/* ── Health bars ── */
-.hbar{opacity:0;transform:translateX(-20px);transition:opacity .5s ease,transform .5s ease;}
-.hbar.v{opacity:1;transform:translateX(0);}
-.health-bars .hbar:nth-child(2){transition-delay:.12s;}
-.health-bars .hbar:nth-child(3){transition-delay:.24s;}
-
-/* ── Promise items ── */
-.promise-item{opacity:0;transform:translateX(-16px);transition:opacity .5s ease,transform .5s ease;}
-.promise-item.v{opacity:1;transform:translateX(0);}
-.promise-item:nth-child(2){transition-delay:.1s;}
-.promise-item:nth-child(3){transition-delay:.2s;}
-.promise-item:nth-child(4){transition-delay:.3s;}
-
-
 
 /* ── WA pulse ── */
 @keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 0 0 9px rgba(37,211,102,0)}}
@@ -402,7 +252,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 .hero-btns{animation-delay:.7s;}
 @keyframes heroIn{to{opacity:1;transform:translateY(0);}}
 
-/* ── Trust icons spin on hover ── */
+/* ── Trust icons ── */
 .trust-icon{transition:transform .4s cubic-bezier(.34,1.56,.64,1),background .25s;}
 .trust-item:hover .trust-icon{transform:rotate(15deg) scale(1.15);background:#e3d9c5;}
 
@@ -421,79 +271,50 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 #wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.55);}
 @media(min-width:901px){#wa-float{bottom:1.5rem;}}
 
-/* ── Testimonials ── */
-.reviews-section{background:#032717;padding:5rem 0;}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
-@media(max-width:900px){.reviews-grid{grid-template-columns:1fr;}}
-
-/* ── Batch counter ── */
-.batch-bar-wrap{margin-bottom:1rem;}
-.batch-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem;}
-.batch-label{font-family:'Manrope',sans-serif;font-size:.72rem;color:#72594a;text-transform:uppercase;letter-spacing:.1em;}
-.batch-count{font-family:'Epilogue',sans-serif;font-size:.8rem;font-weight:700;color:#032717;}
-.batch-track{height:5px;background:rgba(3,39,23,.12);border-radius:999px;overflow:hidden;}
-.batch-fill{height:100%;background:linear-gradient(to right,#c27618,#e8a020);border-radius:999px;transition:width .6s ease;}
-.batch-urgency{font-family:'Manrope',sans-serif;font-size:.7rem;color:#c27618;margin-top:.35rem;min-height:1rem;}
-/* live pulse dot */
-.batch-live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:.4rem;vertical-align:middle;animation:livePulse 1.8s ease infinite;}
-@keyframes livePulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.45;transform:scale(.7);}}
-
-/* ── FAQ Section ── */
-.faq-section{padding:5rem 0;background:#fff8f1;}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;}
-.faq-item{background:#fef2de;border-radius:1.25rem;overflow:hidden;transition:box-shadow .25s;}
-.faq-item:hover{box-shadow:0 8px 32px rgba(3,39,23,.07);}
-.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.4rem 1.5rem;cursor:pointer;user-select:none;}
-.faq-q-text{font-family:'Epilogue',sans-serif;font-size:.95rem;font-weight:700;color:#032717;line-height:1.35;}
-.faq-icon{width:28px;height:28px;border-radius:50%;background:#032717;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s ease;}
-.faq-item.open .faq-icon{transform:rotate(45deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;}
-.faq-item.open .faq-a{max-height:300px;}
-.faq-a-inner{padding:0 1.5rem 1.4rem;font-family:'Manrope',sans-serif;font-size:.875rem;color:#72594a;line-height:1.7;border-top:1px solid rgba(3,39,23,.07);padding-top:1rem;}
-@media(max-width:900px){.faq-grid{grid-template-columns:1fr;}}
-
-/* ── Shipping Modal ── */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(3,39,23,.55);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;padding:1.5rem;}
-.modal-overlay.open{display:flex;animation:modalIn .25s ease;}
-@keyframes modalIn{from{opacity:0}to{opacity:1}}
-.modal-box{background:#fff8f1;border-radius:2rem;max-width:520px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,.2);}
-.modal-head{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 2rem 1.25rem;}
-.modal-title{font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.4rem;color:#032717;}
-.modal-close{width:36px;height:36px;border-radius:50%;background:#f2e7d3;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-.modal-close:hover{background:#e3d9c5;}
-.modal-body{padding:0 2rem 2rem;font-family:'Manrope',sans-serif;font-size:.9rem;color:#72594a;line-height:1.75;}
-.modal-body h4{font-family:'Epilogue',sans-serif;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.15em;color:#032717;margin:1.5rem 0 .5rem;}
-.modal-body p{margin-bottom:.75rem;}
-.modal-body ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:.75rem;}
-.modal-body ul li{display:flex;align-items:flex-start;gap:.6rem;}
-.modal-body ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;}
+/* ── Responsive ── */
+@media(max-width:900px){
+  #hero{min-height:unset;flex-direction:column;align-items:stretch;padding-bottom:0;}
+  #hero-bg{display:none;}
+  #hero::before,#hero::after{display:none;}
+  .hero-content{padding:2rem 1.5rem 1.75rem;position:relative;z-index:2;background:#fff8f1;}
+  .hero-mob-img-wrap{display:block;position:relative;width:100%;flex-shrink:0;overflow:hidden;}
+  .hero-mob-img{width:100%;height:260px;object-fit:cover;object-position:70% center;display:block;}
+  .hero-mob-img-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,#fff8f1,transparent);z-index:1;pointer-events:none;}
+  #hero{min-height:100svh;}
+  #hero-bg::after{background:linear-gradient(to right,rgba(255,248,241,1) 0%,rgba(255,248,241,1) 45%,rgba(255,248,241,.7) 58%,rgba(255,248,241,.1) 75%,transparent 100%) !important;}
+  .nav-links,.nav-wa{display:none!important;}
+  .ham{display:flex!important;}
+  .products-grid-3{grid-template-columns:1fr;}
+  .promise-wrap{grid-template-columns:1fr;flex-direction:column;}
+  .compare-wrap{flex-direction:column-reverse;gap:1rem;}
+  .compare-vs{flex-direction:row;}
+  .vs-line{width:60px;height:2px;}
+  .hero-content{padding:2.5rem 1.5rem 3rem;max-width:75%;}
+  .story-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .story-logo-side{order:-1;}
+  .story-logo-wrap{max-width:200px;margin:0 auto;}
+}
+@media(max-width:600px){
+  .footer-inner{grid-template-columns:1fr;}
+  .compare-wrap{gap:.75rem;}
+}
 </style>
 </head>
 <body>
 
-<!-- TOP FSSAI TICKER -->
+<!-- TOP TICKER -->
 <div class="ticker-wrap" aria-label="Certifications">
   <div class="ticker-track" id="fssai-ticker">
-    <span>FSSAI Lic. No. 11225032000017</span>
-    <span>·</span>
-    <span>Certified Organic · Residue Free from Soil to Seal</span>
-    <span>·</span>
-    <span>Lab Tested · Every Batch · Zero Chemicals</span>
-    <span>·</span>
-    <span>Sulphur Free · No Bleaching · No Shortcuts</span>
-    <span>·</span>
-    <span>Sun-Dried · 7 Days · Natural Process</span>
-    <span>·</span>
-    <span>FSSAI Lic. No. 11225032000017</span>
-    <span>·</span>
-    <span>Certified Organic · Residue Free from Soil to Seal</span>
-    <span>·</span>
-    <span>Lab Tested · Every Batch · Zero Chemicals</span>
-    <span>·</span>
-    <span>Sulphur Free · No Bleaching · No Shortcuts</span>
-    <span>·</span>
-    <span>Sun-Dried · 7 Days · Natural Process</span>
-    <span>·</span>
+    <span>FSSAI Lic. No. 11225032000017</span><span>·</span>
+    <span>Certified Organic · Residue Free from Soil to Seal</span><span>·</span>
+    <span>Lab Tested · Every Batch · Zero Chemicals</span><span>·</span>
+    <span>Sulphur Free · No Bleaching · No Shortcuts</span><span>·</span>
+    <span>Sun-Dried · 7 Days · Natural Process</span><span>·</span>
+    <span>FSSAI Lic. No. 11225032000017</span><span>·</span>
+    <span>Certified Organic · Residue Free from Soil to Seal</span><span>·</span>
+    <span>Lab Tested · Every Batch · Zero Chemicals</span><span>·</span>
+    <span>Sulphur Free · No Bleaching · No Shortcuts</span><span>·</span>
+    <span>Sun-Dried · 7 Days · Natural Process</span><span>·</span>
   </div>
 </div>
 
@@ -505,7 +326,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <a href="#hero" class="nav-active" data-nav="hero">Home</a>
       <a href="#range" data-nav="range">Shop</a>
       <a href="#why-us" data-nav="why-us">Why Us</a>
-      <a href="#process" data-nav="process">Our Story</a>
+      <a href="#our-story" data-nav="our-story">Our Story</a>
     </nav>
     <div class="nav-right">
       <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="nav-wa">
@@ -540,13 +361,14 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <a href="#hero" onclick="closeMob()">Home</a>
     <a href="#range" onclick="closeMob()">Shop</a>
     <a href="#why-us" onclick="closeMob()">Why Us</a>
-    <a href="#process" onclick="closeMob()">Our Story</a>
+    <a href="#our-story" onclick="closeMob()">Our Story</a>
     <div class="mob-btns">
       <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
         <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Amazon</a>
       <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
         <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;" loading="lazy"/></span>Blinkit</a>
-      <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
     </div>
   </div>
 </div>
@@ -559,9 +381,9 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   <div class="hero-content">
     <div style="max-width:30rem;">
       <div class="hero-badge">Now Available · Limited Batches</div>
-      <h1 class="hero-h1">Nature's<br/>Sweetest<br/><em>Secret.</em></h1>
-      <p class="hero-sub">No additives. No sulphur. No shortcuts. Sun-kissed raisins preserved by tradition.</p>
-      <p class="hero-tags">Rich in Iron · Potassium · Antioxidants</p>
+      <h1 class="hero-h1">Nature's<br/><em>Sweetest<br/>Secret.</em></h1>
+      <p class="hero-sub">Sun-dried, sulphur-free raisins — made the traditional way.</p>
+      <p class="hero-tags">Lab Tested | Sulphur Free | Residue ≤0.1%</p>
       <div class="hero-btns">
         <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=hero_amazon" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;">
           <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Buy on Amazon</a>
@@ -571,67 +393,51 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       </div>
     </div>
   </div>
-  <!-- Mobile hero image — hidden on desktop, shown on mobile below text -->
   <div class="hero-mob-img-wrap">
     <img data-src="TNF_BG2" src="" alt="Two women harvesting grapes" class="hero-mob-img"/>
   </div>
 </section>
 
-<!-- CERT AUTHORITY TICKER -->
-<div class="cert-ticker-wrap" aria-label="Certifications and standards">
-  <div class="cert-ticker-track" id="cert-ticker">
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">FSSAI Licensed</div><div class="cert-pill-sub">Lic. No. 11225032000017</div></div>
-    </div>
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 014 13H2a10 10 0 0018 0h-2a7 7 0 01-7 7z"/><path d="M12 13V3s4 3 4 8"/><path d="M12 13V3S8 6 8 11"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">Certified Organic</div><div class="cert-pill-sub">Residue free from soil to seal</div></div>
-    </div>
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-4 9a1 1 0 00.9 1.4h10.2a1 1 0 00.9-1.4L14 9V3"/><path d="M9.5 14h5"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">Lab Tested</div><div class="cert-pill-sub">Clinically residue free · Every batch</div></div>
-    </div>
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">Sulphur Free</div><div class="cert-pill-sub">No chemicals · No bleaching</div></div>
-    </div>
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M17.66 6.34l-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">Sun-Dried</div><div class="cert-pill-sub">7 days · Natural process</div></div>
-    </div>
-    <!-- duplicate for seamless loop -->
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">FSSAI Licensed</div><div class="cert-pill-sub">Lic. No. 11225032000017</div></div>
-    </div>
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 014 13H2a10 10 0 0018 0h-2a7 7 0 01-7 7z"/><path d="M12 13V3s4 3 4 8"/><path d="M12 13V3S8 6 8 11"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">Certified Organic</div><div class="cert-pill-sub">Residue free from soil to seal</div></div>
-    </div>
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-4 9a1 1 0 00.9 1.4h10.2a1 1 0 00.9-1.4L14 9V3"/><path d="M9.5 14h5"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">Lab Tested</div><div class="cert-pill-sub">Clinically residue free · Every batch</div></div>
-    </div>
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">Sulphur Free</div><div class="cert-pill-sub">No chemicals · No bleaching</div></div>
-    </div>
-    <div class="cert-pill">
-      <div class="cert-pill-icon" style="background:rgba(255,255,255,.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M17.66 6.34l-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg></div>
-      <div class="cert-pill-text"><div class="cert-pill-title">Sun-Dried</div><div class="cert-pill-sub">7 days · Natural process</div></div>
+<!-- OUR STORY -->
+<div class="section" id="our-story" style="background:#fff8f1;">
+  <div class="section-inner">
+    <div class="story-grid reveal">
+      <!-- Left: copy -->
+      <div>
+        <div class="story-label">Our Story</div>
+        <h2 class="story-heading">Why We Started<br/>The Native Folks</h2>
+        <div class="story-body">
+          <p>We started The Native Folks because we couldn't find food we truly trusted for our own families.</p>
+          <p>Everything in the market looked polished, but very little felt real.</p>
+          <p>So we went back to the source — to farmers, to soil, to traditional methods — and built something we could stand behind.</p>
+          <p><strong>If it's not good enough for our home, it won't reach yours.</strong></p>
+        </div>
+        <div style="margin-top:1.75rem;">
+          <button onclick="openModal('about-modal')" style="display:inline-flex;align-items:center;gap:.5rem;background:none;border:1px solid rgba(3,39,23,.2);border-radius:.75rem;padding:.65rem 1.25rem;cursor:pointer;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#032717;transition:background .2s;" onmouseover="this.style.background='#fef2de'" onmouseout="this.style.background='none'">
+            Read Our Full Story
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Right: logo -->
+      <div class="story-logo-side">
+        <div class="story-logo-wrap">
+          <div class="story-logo-bg"></div>
+          <img data-src="TNF_Black" src="" alt="The Native Folks" class="story-logo-img" loading="lazy"/>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- WAVE: hero bottom -->
+<!-- WAVE -->
 <div style="background:#fff8f1;line-height:0;margin-top:-2px;">
   <svg viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:40px;">
     <path d="M0,40 C480,0 960,0 1440,40 L1440,40 L0,40 Z" fill="#fff8f1"/>
   </svg>
 </div>
 
-<!-- PRODUCT GRID — 3 products -->
+<!-- PRODUCT GRID -->
 <div class="section" id="range" style="background:#fff8f1;">
   <div class="section-inner">
     <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;">
@@ -644,17 +450,18 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <!-- Raisins LIVE -->
       <div class="pcard">
         <div class="wax"><span>Residue<br/>Free</span></div>
-        <div class="pcard-img live">
-          <img data-src="RAISIN" src="" alt="Sun-Dried Raisins" style="max-height:280px;max-width:100%;object-fit:contain;" loading="lazy"/>
-        </div>
+        <a href="raisin.html" style="display:block;text-decoration:none;">
+          <div class="pcard-img live">
+            <img data-src="RAISIN" src="" alt="Sun-Dried Raisins" style="max-height:280px;max-width:100%;object-fit:contain;" loading="lazy"/>
+          </div>
+        </a>
         <div class="pcard-meta">
           <div>
-            <div class="pcard-name">Sun-Dried Raisins</div>
+            <a href="raisin.html" style="text-decoration:none;"><div class="pcard-name" style="text-decoration:none;">Sun-Dried Raisins</div></a>
             <div class="pcard-desc">Nashik Valley · Organic · 200g</div>
           </div>
           <div class="pcard-price">₹349</div>
         </div>
-        <!-- BATCH COUNTER -->
         <div class="batch-bar-wrap" id="batch-wrap">
           <div class="batch-meta">
             <span class="batch-label"><span class="batch-live-dot"></span>Today's Stock</span>
@@ -664,6 +471,10 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
           <div class="batch-urgency" id="batch-urgency"></div>
         </div>
         <div class="pcard-btns">
+          <a href="raisin.html" style="display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.5rem 1rem;border-radius:.75rem;border:1px solid rgba(3,39,23,.18);background:transparent;color:#032717;font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#fef2de'" onmouseout="this.style.background='transparent'">
+            View Product Details
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
           <div class="pcard-btns-row">
             <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=product_amazon" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.625rem 1rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;">
               <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Amazon</a>
@@ -709,58 +520,19 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   </div>
 </div>
 
-<!-- HEALTH IN EVERY HANDFUL + DELICIOUS WAYS (merged) -->
-<div class="section" style="background:#fef2de;">
-  <div class="section-inner">
-    <div class="health-grid">
-      <div class="reveal">
-        <h2 class="section-title" style="margin-bottom:1rem;">Health in<br/>Every Handful</h2>
-        <p style="font-family:'Manrope',sans-serif;font-size:.95rem;color:#72594a;margin-bottom:1.75rem;line-height:1.7;">Naturally packed with nutrients your body craves — zero additives, zero preservatives, zero shortcuts.</p>
-        <div class="health-bars">
-          <div class="hbar" style="background:#e8a020;"><div class="hbar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><p>Rich in Iron, Potassium &amp; Antioxidants</p></div>
-          <div class="hbar" style="background:#c27618;"><div class="hbar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 014 13H2a10 10 0 0018 0h-2a7 7 0 01-7 7z"/><path d="M12 13V3s4 3 4 8"/><path d="M12 13V3S8 6 8 11"/></svg></div><p>100% Natural &amp; Chemical-free</p></div>
-          <div class="hbar" style="background:#a85c0a;"><div class="hbar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 9.36 4 13.08 4 16a8 8 0 0016 0c0-2.92-2.48-6.64-8-14z"/></svg></div><p>Naturally Sweet — No additives or preservatives</p></div>
-        </div>
-      </div>
-      <div class="reveal d1 health-right-col">
-        <!-- Creative image placement: full-bleed card with floating stats -->
-        <div class="health-img-card">
-          <div class="health-img-inner">
-            <img data-src="RAISIN_HERO" src="" alt="Sun-Dried Raisins" class="health-img-main" loading="lazy"/>
-          </div>
-          <!-- Circle stat badges — positioned outside/overlapping card edges -->
-          <div class="health-float-badge" style="top:-1.5rem;right:2.5rem;">
-            <div class="hfb-num" data-target="0" data-suffix="">0</div>
-            <div class="hfb-lbl">Additives</div>
-          </div>
-          <div class="health-float-badge" style="bottom:-1.5rem;left:2.5rem;">
-            <div class="hfb-num" data-target="0" data-suffix="">0</div>
-            <div class="hfb-lbl">Sulphur</div>
-          </div>
-          <div class="health-float-badge hfb-accent" style="top:50%;right:-2.25rem;transform:translateY(-50%);">
-            <div class="hfb-num" data-target="100" data-suffix="%">0%</div>
-            <div class="hfb-lbl">Organic</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- WHY CHOOSE US -->
 <div class="section pattern-bg" id="why-us" style="background:#fff8f1;">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;margin-bottom:3rem;">
       <h2 class="section-title">Why Choose Us?</h2>
-      <p class="section-sub" style="margin-bottom:0;">See the difference that no shortcuts make.</p>
+      <p class="section-sub" style="margin-bottom:0;">What makes our raisins truly different.</p>
     </div>
     <div class="compare-wrap reveal">
-      <!-- TNF first on mobile (column-reverse means ours shows top) -->
       <div class="compare-col ours">
         <div class="compare-col-title">The Native Folks</div>
-        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><p>Grown in Jeevamrit enriched soil</p></div>
-        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><p>Naturally sun-dried over 7 days</p></div>
-        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><p>Rich, naturally-dark hue — no bleaching</p></div>
+        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><p>Grown in Jeevamrit-enriched natural soil</p></div>
+        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><p>Naturally sun-dried (7+ days)</p></div>
+        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><p>Naturally darker — no sulphur, no bleaching</p></div>
         <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><p>Zero additives or preservatives</p></div>
       </div>
       <div class="compare-vs">
@@ -770,92 +542,13 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       </div>
       <div class="compare-col others">
         <div class="compare-col-title">Famous Brands in the Market</div>
-        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><p>Grown in chemically-treated soil</p></div>
+        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><p>Grown using chemical fertilizers</p></div>
         <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><p>Sulphur-dried for faster processing</p></div>
         <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><p>Chemical bleach for golden color</p></div>
-        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><p>Artificial additives &amp; preservatives</p></div>
+        <div class="compare-row-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><p>Grown using chemical fertilizers</p></div>
       </div>
     </div>
     <div class="compare-tagline reveal">No sulphur · No bleaching · No shortcuts</div>
-  </div>
-</div>
-
-<!-- FROM SOIL TO SEAL -->
-<div class="section" id="process" style="background:#fef2de;">
-  <div class="section-inner">
-    <div class="reveal" style="text-align:center;margin-bottom:3rem;">
-      <h2 class="section-title">From Soil to Seal</h2>
-      <p class="section-sub" style="margin-bottom:0;font-style:italic;">A Journey of Purity</p>
-    </div>
-    <!-- Desktop: 2-row connected grid. Mobile: vertical timeline -->
-    <div class="journey-section-inner reveal">
-      <!-- Row 1: steps 1-3 with connector line -->
-      <div class="journey-grid">
-        <div class="jstep">
-          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V12M12 12C10 8 6 6 3 7c1 4 5 7 9 5ZM12 12C14 8 18 6 21 7c-1 4-5 7-9 5Z"/></svg>
-          </div>
-          <div class="jstep-num">01</div>
-          <p>Soil enriched with cow manure &amp; Jeevamrit</p>
-        </div>
-        <div class="jstep">
-          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="14" r="2.5"/><circle cx="15" cy="14" r="2.5"/><circle cx="12" cy="10" r="2.5"/><path d="M12 7.5V4M10 4h4"/></svg>
-          </div>
-          <div class="jstep-num">02</div>
-          <p>Grapes nurtured naturally, zero pesticides</p>
-        </div>
-        <div class="jstep">
-          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l-2 11h16L18 9M2 9h20M8 9l2-5M16 9l-2-5"/></svg>
-          </div>
-          <div class="jstep-num">03</div>
-          <p>Handpicked at peak ripeness</p>
-        </div>
-      </div>
-      <!-- Curved arrow connector between rows -->
-      <div style="display:flex;align-items:center;justify-content:center;padding:.25rem 0;position:relative;z-index:2;">
-        <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M24 2 C24 2, 44 2, 44 16 C44 28, 24 30, 24 30 C24 30, 4 28, 4 16 C4 2, 24 2, 24 2Z" stroke="none"/>
-          <path d="M36 2 Q44 2 44 10 Q44 28 24 30 Q4 28 4 10 Q4 2 12 2" stroke="url(#arrowGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <defs>
-            <linearGradient id="arrowGrad" x1="0" y1="0" x2="48" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#c27618"/>
-              <stop offset="100%" stop-color="#e8a020"/>
-            </linearGradient>
-          </defs>
-          <polygon points="24,26 20,32 28,32" fill="#e8a020"/>
-        </svg>
-      </div>
-      <!-- Row 2: steps 4-6 with connector line -->
-      <div class="journey-grid-row2">
-        <div class="jstep">
-          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M17.66 6.34l-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
-          </div>
-          <div class="jstep-num">04</div>
-          <p>Sun-dried slowly over 7 days</p>
-        </div>
-        <div class="jstep">
-          <div class="jstep-icon" style="color:#032717;background:#f2e7d3;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-4 9a1 1 0 00.9 1.4h10.2a1 1 0 00.9-1.4L14 9V3"/></svg>
-          </div>
-          <div class="jstep-num">05</div>
-          <p>Clinically lab-tested, every batch</p>
-        </div>
-        <div class="jstep highlight">
-          <div class="jstep-icon" style="background:#032717;color:#fff;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16Z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
-          </div>
-          <div class="jstep-num">06</div>
-          <p>Sealed in premium moisture-barrier pack</p>
-        </div>
-      </div>
-    </div>
-    <div class="journey-tagline reveal" style="margin-top:2.5rem;">
-      <p>This journey is what makes us</p>
-      <p>Raw. Real. Rooted.</p>
-    </div>
   </div>
 </div>
 
@@ -893,121 +586,22 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   </div>
 </div>
 
-<!-- OUR PROMISE -->
-<div class="section" style="background:#032717;">
-  <div class="section-inner">
-    <div class="promise-wrap">
-      <div class="reveal">
-        <h2 class="section-title" style="color:#fff;margin-bottom:2rem;">Our Promise.<br/>Your Peace of Mind.</h2>
-        <div class="promise-list">
-          <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Complete Satisfaction Guarantee</span></div>
-          <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Resealable, moisture-barrier packs</span></div>
-          <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Ships fresh from <strong>Mumbai, Pune &amp; Bangalore</strong></span></div>
-          <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Clinically residue-tested every batch</span></div>
-        </div>
-        <div class="promise-btns" style="display:flex;flex-wrap:wrap;gap:.6rem;">
-          <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=promise_amazon" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.18)'" onmouseout="this.style.background='rgba(255,255,255,.1)'">
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:#fff;border-radius:3px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:16px;height:16px;object-fit:contain;" loading="lazy"/></span>Amazon
-          </a>
-          <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=promise_blinkit" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:filter .2s;" onmouseover="this.style.filter='brightness(.95)'" onmouseout="this.style.filter='none'">
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:3px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:20px;height:20px;object-fit:contain;" loading="lazy"/></span>Blinkit
-          </a>
-          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.25rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp
-          </a>
-        </div>
-      </div>
-      <div class="reveal d1 promise-visual">
-        <!-- Stacked card effect: shadow card behind, main image on top -->
-        <div class="promise-card-stack">
-          <div class="promise-card-shadow"></div>
-          <div class="promise-card-main">
-            <img data-src="PROMISE_IMG" src="" alt="Native Folks Sun-Dried Raisins" class="promise-card-img" loading="lazy"/>
-            <!-- Overlay label at bottom -->
-            <div class="promise-card-label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F8CB46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-              <span>Satisfaction Guaranteed</span>
-            </div>
-          </div>
-          <!-- Floating year badge -->
-          <div class="promise-year-badge">
-            <div style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.3rem;color:#032717;line-height:1;">2024</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:8px;text-transform:uppercase;letter-spacing:.18em;color:#72594a;margin-top:2px;">Since</div>
-          </div>
-        </div>
-      </div>
+<!-- ABOUT MODAL (Extended Our Story - Slide 6) -->
+<div class="modal-overlay" id="about-modal" onclick="closeModal('about-modal')">
+  <div class="modal-box" onclick="event.stopPropagation()" style="max-width:600px;">
+    <div class="modal-head">
+      <div class="modal-title">About The Native Folks</div>
+      <button class="modal-close" onclick="closeModal('about-modal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#032717" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
-  </div>
-</div>
-
-
-<!-- WAVE DIVIDER -->
-<div style="background:#032717;line-height:0;margin-bottom:-2px;">
-  <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:64px;">
-    <path d="M0,0 C360,64 1080,64 1440,0 L1440,64 L0,64 Z" fill="#fff8f1"/>
-  </svg>
-</div>
-
-<!-- FAQ SECTION -->
-<div class="faq-section" id="faq">
-  <div class="section-inner">
-    <div class="reveal" style="text-align:center;margin-bottom:.5rem;">
-      <h2 class="section-title" style="text-align:center;">Questions We Love Getting</h2>
-      <p class="section-sub" style="text-align:center;margin-bottom:0;">Everything you want to know before your first bite.</p>
-    </div>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">What makes your raisins different from store-bought ones?</span>
-          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Most commercial raisins are sulphur-treated to achieve that golden colour and preserve shelf life. Ours are 100% sun-dried over 7 days with zero sulphur, zero bleaching, and no chemical treatment — which is why they're naturally dark and taste like real fruit. We also grow in Jeevamrit-enriched soil, which means richer flavour from the ground up.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Are your raisins certified organic?</span>
-          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. We are FSSAI licensed (Lic. No. 11225032000017) and our produce is grown using certified organic farming practices — no synthetic pesticides, no chemical fertilisers. Every batch is clinically lab-tested for residue before it reaches your door.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">How should I store the raisins to keep them fresh?</span>
-          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Our packs come with a resealable moisture-barrier zipper. Once opened, press out the air, seal tight, and store in a cool dry place away from direct sunlight. They stay fresh for up to 6 months this way. For longer storage, you can refrigerate them — they'll keep for up to a year.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">What is the best way to eat them?</span>
-          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">The most popular way among our customers is soaking 10–15 raisins overnight in water and eating them first thing in the morning on an empty stomach — great for digestion and iron absorption. You can also eat them straight as a snack, add them to oats, kheer, pulao, or trail mixes. No wrong answer here.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Where are the grapes sourced from?</span>
-          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Our grapes come from the Nashik Valley in Maharashtra — India's wine and raisin capital, known for its rich basalt soil and ideal dry climate. We work directly with small family farms who share our commitment to chemical-free, traditional farming. No middlemen, no compromises.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">How long does delivery take?</span>
-          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">On Amazon, orders typically arrive within 1–2 days for Prime members. On Blinkit, delivery is in under 10 minutes in serviceable areas. For WhatsApp orders, we dispatch within 24 hours from Mumbai, Pune, and Bangalore — delivery usually takes 2–3 business days depending on your location.</div></div>
-      </div>
-    </div>
-
-    <!-- Contact CTA -->
-    <div class="reveal" style="margin-top:3.5rem;text-align:center;padding:2.5rem;background:#032717;border-radius:2rem;">
-      <p style="font-family:'Epilogue',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.25em;color:rgba(255,255,255,.35);margin-bottom:.75rem;">Still have questions?</p>
-      <h3 style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(1.2rem,3vw,1.8rem);color:#fff;margin-bottom:1.5rem;">We're one message away.</h3>
-      <a href="https://wa.me/919172658066?text=Hi%21%20I%20have%20a%20question%20about%20The%20Native%20Folks%20products." target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 2rem;border-radius:.875rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Chat on WhatsApp
-      </a>
+    <div class="modal-body">
+      <p>The Native Folks was born from a simple belief — that food should be as pure as nature intended.</p>
+      <p>In a world where shortcuts have become the norm, we chose a different path. One that goes back to our roots — to traditional farming, honest practices, and ingredients that don't need fixing.</p>
+      <p>Our journey begins in the soil — enriched using natural methods like Jeevamrit, an age-old practice that nourishes the land without chemicals. The grapes are grown patiently, handpicked at the right time, and then sun-dried over days — not rushed, not processed.</p>
+      <p>What you get is not just a product, but a reflection of how food used to be.</p>
+      <p><strong>No sulphur. No bleaching. No artificial additives.</strong></p>
+      <p>Every batch is carefully tested to ensure purity, because we believe trust should never be assumed — it should be proven.</p>
+      <p>At The Native Folks, we're not just selling raisins.</p>
+      <p>We're bringing back a way of living — one that is raw, real, and deeply rooted in nature.</p>
     </div>
   </div>
 </div>
@@ -1058,26 +652,12 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   </div>
 </div>
 
-<!-- MANIFESTO -->
-<div class="manifesto" style="background:#fff8f1;">
-  <div class="manifesto-frame reveal">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:1.25rem;display:block;margin-left:auto;margin-right:auto;opacity:.6;"><path d="M11 20A7 7 0 014 13H2a10 10 0 0018 0h-2a7 7 0 01-7 7z"/><path d="M12 13V3s4 3 4 8"/><path d="M12 13V3S8 6 8 11"/></svg>
-    <blockquote class="manifesto-quote">"Bringing the honesty of the farm to the modern table."</blockquote>
-    <div class="manifesto-attr">
-      <div class="manifesto-dot"></div>
-      <div class="manifesto-label">The Native Manifesto</div>
-      <div class="manifesto-dot"></div>
-    </div>
-  </div>
-</div>
-
 <!-- FOOTER -->
 <footer id="footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-brand-logo"><img data-src="TNF_Black" src="" alt="The Native Folks" style="height:72px;width:auto;filter:invert(1) brightness(1.8);" loading="lazy"/></div>
       <p>Raw. Real. Rooted.<br/>Preserving India's artisanal agricultural heritage for the global palate.</p>
-      <div class="email" style="color:rgba(255,248,241,.45);font-family:'Manrope',sans-serif;font-size:.78rem;margin-top:.35rem;" id="footer-email"></div>
       <div style="display:flex;gap:.6rem;margin-top:1.25rem;">
         <a href="https://www.instagram.com/thenativefolksofficial/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,248,241,.5);text-decoration:none;transition:color .2s,border-color .2s;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,.4)'" onmouseout="this.style.color='rgba(255,248,241,.5)';this.style.borderColor='rgba(255,255,255,.15)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.facebook.com/TheNativeFolks" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,248,241,.5);text-decoration:none;transition:color .2s,border-color .2s;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,.4)'" onmouseout="this.style.color='rgba(255,248,241,.5)';this.style.borderColor='rgba(255,255,255,.15)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
@@ -1085,10 +665,11 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       </div>
     </div>
     <div class="footer-col">
-      <h5>Journey</h5>
+      <h5>Pages</h5>
       <ul>
-        <li><a href="#">Sourcing</a></li>
-        <li><a href="#">Our Story</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#our-story">Our Story</a></li>
+        <li><a href="raisin.html">Sun-Dried Raisins</a></li>
         <li><a href="#why-us">Why Native?</a></li>
       </ul>
     </div>
@@ -1098,7 +679,6 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <li><a href="#" onclick="openModal('privacy-modal');return false;">Privacy Policy</a></li>
         <li><a href="#" onclick="openModal('shipping-modal');return false;">Shipping</a></li>
         <li><a href="https://wa.me/919172658066?text=Hi%21%20I%20have%20a%20question%20about%20The%20Native%20Folks%20products." target="_blank">Contact Us</a></li>
-        <li><a href="#faq">FAQs</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1143,7 +723,6 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 </div>
 
 <script>
-// ── Image injection ──
 var IMGS = {};
 function injectImgs(){
   document.querySelectorAll('[data-src]').forEach(function(el){
@@ -1151,9 +730,7 @@ function injectImgs(){
     if(IMGS[k]) el.src = IMGS[k];
   });
 }
-// Images assigned below — injectImgs called after all URLs are set
 
-// ── Nav dropdown ──
 function toggleDD(){
   document.getElementById('nav-dd').classList.toggle('open');
 }
@@ -1163,7 +740,6 @@ document.addEventListener('click',function(e){
   if(btn && dd && !btn.contains(e.target)&&!dd.contains(e.target)) dd.classList.remove('open');
 });
 
-// ── Mobile menu ──
 function toggleMob(){
   var m=document.getElementById('mobile-menu');
   var open=m.style.display!=='flex';
@@ -1177,8 +753,8 @@ function closeMob(){
   document.getElementById('h1').style.transform='';document.getElementById('h2').style.opacity='';document.getElementById('h3').style.transform='';
 }
 
-// ── Scroll spy ──
-var sections=['hero','range','why-us','process'];
+// Scroll spy
+var sections=['hero','our-story','range','why-us','reviews'];
 var navLinks=document.querySelectorAll('.nav-links a[data-nav]');
 window.addEventListener('scroll',function(){
   var st=window.scrollY+120;
@@ -1190,8 +766,6 @@ window.addEventListener('scroll',function(){
   navLinks.forEach(function(a){
     a.classList.toggle('nav-active',a.getAttribute('data-nav')===cur);
   });
-
-  // Mobile buy bar
   var mbb=document.getElementById('mob-buy-bar');
   if(mbb){
     var hero=document.getElementById('hero');
@@ -1200,14 +774,14 @@ window.addEventListener('scroll',function(){
   }
 },{passive:true});
 
-// ── Reveal on scroll ──
-var revealEls=document.querySelectorAll('.reveal,.section-title,.stat,.review-card,.jstep,.compare-col,.hbar,.promise-item');
+// Reveal on scroll
+var revealEls=document.querySelectorAll('.reveal,.section-title,.stat,.review-card,.compare-col');
 var revealIO=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');}});
 },{threshold:0.12});
 revealEls.forEach(function(el){revealIO.observe(el);});
 
-// ── Batch counter ──
+// Batch counter
 (function(){
   var MAX=200;
   var DROP_PER_INTERVAL=[5,4,6,3,5,4,7,3,6,4,5,3,6,4,5,3,7,4,5,3,6,4,5,3,7];
@@ -1232,7 +806,7 @@ revealEls.forEach(function(el){revealIO.observe(el);});
   }
 })();
 
-// ── Images (via ImageKit) ──
+// Images
 IMGS["TNF_Black"] = "https://ik.imagekit.io/tnf/TNF_Black.png";
 IMGS["TNF_White"] = "https://ik.imagekit.io/tnf/TNF_Black.png";
 IMGS["TNF_BG2"]   = "https://ik.imagekit.io/tnf/TNF_BG2.jpg";
@@ -1242,67 +816,16 @@ IMGS["Blinkit"]   = "https://ik.imagekit.io/tnf/blinkit-logo-vector_logoshape.co
 IMGS["RAISIN_HERO"] = "https://ik.imagekit.io/tnf/Gemini_Generated_Image_t5blzmt5blzmt5bl.png";
 IMGS["PROMISE_IMG"] = "https://ik.imagekit.io/tnf/DSC00832.jpg";
 
-// Run after DOM is ready
 if(document.readyState === 'loading'){
   document.addEventListener('DOMContentLoaded', injectImgs);
 } else {
   injectImgs();
 }
 
-// ── Scroll counter animation for health badges ──
-(function(){
-  var counters = document.querySelectorAll('.hfb-num[data-target]');
-  if(!counters.length) return;
-
-  var counterIO = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting) return;
-      var el = entry.target;
-      var target = parseInt(el.getAttribute('data-target'));
-      var suffix = el.getAttribute('data-suffix') || '';
-      var duration = 1200;
-      var start = null;
-
-      // 0 stays at 0 — just flash it
-      if(target === 0){
-        el.textContent = '0' + suffix;
-        counterIO.unobserve(el);
-        return;
-      }
-
-      function step(ts){
-        if(!start) start = ts;
-        var progress = Math.min((ts - start) / duration, 1);
-        // ease out cubic
-        var eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target) + suffix;
-        if(progress < 1){
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = target + suffix;
-        }
-      }
-      requestAnimationFrame(step);
-      counterIO.unobserve(el);
-    });
-  }, {threshold: 0.5});
-
-  counters.forEach(function(c){ counterIO.observe(c); });
-})();
-
-// ── FAQ accordion ──
-function toggleFaq(btn){
-  var item = btn.closest('.faq-item');
-  var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
-  if(!isOpen) item.classList.add('open');
-}
-
-// ── Modals ──
+// Modals
 function openModal(id){ document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
 function closeModal(id){ document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(function(m){ m.classList.remove('open'); document.body.style.overflow=''; }); });
-
 </script>
 </body>
 </html>
