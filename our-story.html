@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://ik.imagekit.io"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Our Story | The Native Folks</title>
+<meta name="description" content="The story behind The Native Folks — why we started, who we are, and what we believe food should be."/>
+<link rel="canonical" href="https://thenativefolks.com/our-story.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNSJ4R1SCS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RNSJ4R1SCS');</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#fff8f1;color:#201b0f;font-family:'Manrope',sans-serif;overflow-x:hidden;}
+h1,h2,h3,h4,h5{font-family:'Epilogue',sans-serif;}
+a{text-decoration:none;}
+img{max-width:100%;}
+
+/* ── Ticker ── */
+.ticker-wrap{overflow:hidden;background:#032717;color:#fff;padding:10px 0;position:sticky;top:0;z-index:100;}
+.ticker-track{display:flex;gap:3rem;animation:ticker 35s linear infinite;width:max-content;white-space:nowrap;font-family:'Epilogue',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-wrap:hover .ticker-track{animation-play-state:paused;}
+
+/* ── Nav ── */
+#nav{position:sticky;top:38px;z-index:90;background:rgba(255,248,241,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(3,39,23,.07);}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.nav-logo img{height:60px;width:auto;display:block;filter:drop-shadow(0 1px 3px rgba(0,0,0,.15));}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#72594a;position:relative;padding-bottom:3px;}
+.nav-links a.nav-active{color:#032717;border-bottom:2px solid #032717;padding-bottom:2px;}
+.nav-links a:not(.nav-active)::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#032717;transition:width .25s ease;}
+.nav-links a:not(.nav-active):hover::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:.75rem;}
+.nav-wa{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.ham span{width:22px;height:2px;background:#032717;display:block;transition:.3s;}
+#mobile-menu{display:none;flex-direction:column;gap:1.25rem;padding:1.5rem 2rem;background:#fff8f1;border-top:1px solid #f2e7d3;}
+#mobile-menu a{font-family:'Epilogue',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#72594a;}
+
+/* ── PAGE HERO ── */
+.page-hero{min-height:52vh;display:flex;align-items:flex-end;padding:0 0 4rem;background:#fff8f1;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(194,118,24,.08) 0%,transparent 65%);pointer-events:none;}
+.page-hero-inner{max-width:1280px;margin:0 auto;padding:0 2rem;width:100%;}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#72594a;margin-bottom:3rem;transition:color .2s;margin-top:3rem;}
+.back-link:hover{color:#032717;}
+.page-label{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:#c27618;margin-bottom:1.25rem;}
+.page-h1{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(3.5rem,8vw,7rem);color:#032717;line-height:.92;letter-spacing:-.02em;}
+.page-h1 em{font-style:italic;color:#72594a;}
+.hero-tagline{font-family:'Manrope',sans-serif;font-size:1rem;color:#72594a;margin-top:1.5rem;max-width:36rem;line-height:1.7;}
+
+/* ── ABOUT — 2 chapter layout ── */
+.story-section{padding:7rem 0;}
+.story-inner{max-width:1280px;margin:0 auto;padding:0 2rem;}
+.chapter{display:flex;flex-direction:column;gap:5rem;}
+.chapter-block{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;}
+.chapter-meta{position:sticky;top:130px;}
+.chapter-num{font-family:'Epilogue',sans-serif;font-size:clamp(5rem,10vw,8rem);font-weight:900;color:rgba(3,39,23,.06);line-height:1;margin-bottom:.5rem;letter-spacing:-.04em;}
+.chapter-tag{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:#c27618;margin-bottom:.75rem;}
+.chapter-title{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(1.4rem,2.5vw,2rem);color:#032717;line-height:1.15;}
+.chapter-body{display:flex;flex-direction:column;gap:0;}
+.chapter-para{padding:2rem 0;border-bottom:1px solid rgba(3,39,23,.07);display:flex;gap:1.5rem;align-items:flex-start;}
+.chapter-para:first-child{padding-top:0;}
+.chapter-para:last-child{border-bottom:none;}
+.para-dot{width:7px;height:7px;border-radius:50%;background:#c27618;flex-shrink:0;margin-top:.65rem;}
+.chapter-para p{font-family:'Manrope',sans-serif;font-size:1rem;color:#72594a;line-height:1.85;}
+.chapter-divider{display:flex;align-items:center;gap:1.5rem;padding:1rem 0;}
+.chapter-divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(3,39,23,.12),transparent);}
+.chapter-divider-dot{width:8px;height:8px;border-radius:50%;background:#c27618;flex-shrink:0;}
+.story-quote{background:#032717;border-radius:2rem;padding:3.5rem;margin-top:4rem;position:relative;overflow:hidden;}
+.story-quote::before{content:'\201C';font-family:'Epilogue',sans-serif;font-size:12rem;font-weight:900;color:rgba(255,255,255,.04);position:absolute;top:-2rem;left:1.5rem;line-height:1;pointer-events:none;}
+.story-quote p{font-family:'Epilogue',sans-serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;font-style:italic;color:#fff;line-height:1.45;position:relative;z-index:1;}
+.story-quote cite{display:block;font-family:'Manrope',sans-serif;font-size:.8rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.2em;margin-top:1.25rem;font-style:normal;}
+
+/* ── FOUNDERS ── */
+.founders-section{padding:7rem 0;background:#fff8f1;}
+.founders-inner{max-width:1280px;margin:0 auto;padding:0 2rem;}
+.founders-header{margin-bottom:5rem;}
+.founders-header-label{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:#c27618;margin-bottom:1rem;}
+.founders-header-h2{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.5rem);color:#032717;line-height:1.0;margin-bottom:1.25rem;}
+.founders-header-sub{font-family:'Manrope',sans-serif;font-size:1rem;color:#72594a;max-width:50rem;line-height:1.8;}
+.founders-list{display:flex;flex-direction:column;gap:2rem;}
+.founder-row{display:grid;grid-template-columns:420px 1fr;min-height:480px;overflow:hidden;border-radius:2rem;position:relative;}
+.founder-row:nth-child(even){grid-template-columns:1fr 420px;}
+.founder-photo{position:relative;overflow:hidden;background:#e8ddd0;}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
+.founder-row:hover .founder-photo img{transform:scale(1.04);}
+.founder-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,rgba(254,242,222,.25));pointer-events:none;}
+.founder-row:nth-child(even) .founder-photo-overlay{background:linear-gradient(to left,transparent 55%,rgba(254,242,222,.25));}
+.founder-info{background:#fef2de;padding:3.5rem;display:flex;flex-direction:column;justify-content:center;}
+.founder-row:nth-child(even) .founder-info{order:-1;}
+.founder-info-num{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:#c27618;margin-bottom:1.5rem;}
+.founder-info-line{width:40px;height:3px;background:#c27618;border-radius:2px;margin-bottom:1.75rem;}
+.founder-info-name{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(2rem,3.5vw,2.8rem);color:#032717;line-height:1;margin-bottom:.5rem;}
+.founder-info-role{font-family:'Manrope',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:#72594a;margin-bottom:1.75rem;}
+.founder-info-bio{font-family:'Manrope',sans-serif;font-size:.95rem;color:#72594a;line-height:1.85;}
+
+/* ── VIDEO ── */
+.video-section{background:#032717;padding:7rem 0;}
+.video-inner{max-width:1280px;margin:0 auto;padding:0 2rem;}
+.video-header{margin-bottom:4rem;}
+.video-label{font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:rgba(255,255,255,.3);margin-bottom:1rem;}
+.video-heading{font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.5rem);color:#fff;line-height:1.0;margin-bottom:1.25rem;}
+.video-heading em{font-style:italic;color:#e8a020;}
+.video-sub{font-family:'Manrope',sans-serif;font-size:1rem;color:rgba(255,255,255,.45);max-width:44rem;line-height:1.8;}
+.video-frame{position:relative;width:100%;border-radius:2rem;overflow:hidden;background:#0a1f12;aspect-ratio:16/9;}
+.video-placeholder-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;}
+.play-btn{width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s,transform .35s cubic-bezier(.34,1.56,.64,1),border-color .3s;}
+.play-btn:hover{background:rgba(255,255,255,.18);transform:scale(1.12);border-color:rgba(255,255,255,.4);}
+.play-btn svg{margin-left:5px;}
+.video-coming{font-family:'Manrope',sans-serif;font-size:.85rem;color:rgba(255,255,255,.25);letter-spacing:.1em;text-transform:uppercase;}
+
+/* ── FOOTER ── */
+footer{background:#201b0f;border-radius:1.5rem 1.5rem 0 0;padding:4rem 0 0;position:relative;}
+footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:3px;background:linear-gradient(to right,#c27618,#e8a020,#c27618);border-radius:0 0 4px 4px;}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-brand{max-width:18rem;}
+.footer-brand-logo img{height:72px;width:auto;display:block;margin-bottom:1rem;}
+.footer-brand p{font-family:'Manrope',sans-serif;font-size:.8rem;color:rgba(255,248,241,.5);line-height:1.65;margin-bottom:.5rem;max-width:16rem;}
+.footer-col h5{font-family:'Epilogue',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.25em;color:rgba(255,248,241,.25);margin-bottom:1.25rem;font-weight:700;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+.footer-col ul li a{font-family:'Manrope',sans-serif;font-size:.85rem;color:rgba(255,248,241,.55);transition:color .2s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-bottom{max-width:1280px;margin:0 auto;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-family:'Manrope',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,248,241,.2);}
+
+/* ── ANIMATIONS ── */
+.fu{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;}
+.fu.v{opacity:1;transform:none;}
+.fl{opacity:0;transform:translateX(-32px);transition:opacity .7s ease,transform .7s ease;}
+.fl.v{opacity:1;transform:none;}
+.fr{opacity:0;transform:translateX(32px);transition:opacity .7s ease,transform .7s ease;}
+.fr.v{opacity:1;transform:none;}
+.si{opacity:0;transform:scale(.94);transition:opacity .7s ease,transform .7s cubic-bezier(.34,1.2,.64,1);}
+.si.v{opacity:1;transform:scale(1);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+.chapter-para{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.chapter-para.v{opacity:1;transform:none;}
+.chapter-para:nth-child(2){transition-delay:.1s;}
+.chapter-para:nth-child(3){transition-delay:.2s;}
+.chapter-para:nth-child(4){transition-delay:.3s;}
+.hero-label-anim{opacity:0;transform:translateY(14px);animation:heroIn .6s .2s ease forwards;}
+.hero-h1-anim{opacity:0;transform:translateY(28px);animation:heroIn .85s .35s ease forwards;}
+.hero-sub-anim{opacity:0;transform:translateY(14px);animation:heroIn .7s .55s ease forwards;}
+@keyframes heroIn{to{opacity:1;transform:none;}}
+@keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 0 0 9px rgba(37,211,102,0)}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links,.nav-wa{display:none!important;}
+  .ham{display:flex!important;}
+  .chapter-block{grid-template-columns:1fr;gap:2.5rem;}
+  .chapter-meta{position:static;}
+  .chapter-num{font-size:5rem;}
+  .founder-row,.founder-row:nth-child(even){grid-template-columns:1fr!important;min-height:auto;}
+  .founder-row:nth-child(even) .founder-info{order:0;}
+  .founder-photo{height:360px;}
+  .story-section,.founders-section,.video-section{padding:4rem 0;}
+  .page-hero{min-height:44vh;}
+  .story-quote{padding:2.5rem;}
+  .founder-info{padding:2.5rem;}
+}
+@media(max-width:600px){
+  .founder-photo{height:280px;}
+  .founder-info{padding:2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP TICKER -->
+<div class="ticker-wrap" aria-label="Certifications">
+  <div class="ticker-track">
+    <span>FSSAI Lic. No. 11225032000017</span><span>·</span>
+    <span>Certified Organic · Residue Free from Soil to Seal</span><span>·</span>
+    <span>Lab Tested · Every Batch · Zero Chemicals</span><span>·</span>
+    <span>Sulphur Free · No Bleaching · No Shortcuts</span><span>·</span>
+    <span>Sun-Dried · 7 Days · Natural Process</span><span>·</span>
+    <span>FSSAI Lic. No. 11225032000017</span><span>·</span>
+    <span>Certified Organic · Residue Free from Soil to Seal</span><span>·</span>
+    <span>Lab Tested · Every Batch · Zero Chemicals</span><span>·</span>
+    <span>Sulphur Free · No Bleaching · No Shortcuts</span><span>·</span>
+    <span>Sun-Dried · 7 Days · Natural Process</span><span>·</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img data-src="TNF_Black" src="" alt="The Native Folks" loading="lazy"/></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#range">Shop</a>
+      <a href="index.html#why-us">Why Us</a>
+      <a href="our-story.html" class="nav-active">Our Story</a>
+      <a href="raisin.html" style="color:#c27618;border-bottom:2px solid #c27618;padding-bottom:2px;">Raisins</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" class="nav-wa">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="ham" onclick="toggleMob()" id="ham-btn">
+        <span id="h1"></span><span id="h2"></span><span id="h3"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="index.html#range" onclick="closeMob()">Shop</a>
+    <a href="index.html#why-us" onclick="closeMob()">Why Us</a>
+    <a href="our-story.html" style="color:#032717;">Our Story</a>
+    <a href="raisin.html" style="color:#c27618;">Raisins</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <a href="index.html" class="back-link hero-label-anim">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Home
+    </a>
+    <div class="page-label hero-label-anim">Our Story</div>
+    <h1 class="page-h1 hero-h1-anim">Raw.<br/><em>Real.</em><br/>Rooted.</h1>
+    <p class="hero-tagline hero-sub-anim">The question that made us build something different.</p>
+  </div>
+</div>
+
+<!-- ABOUT — 2 CHAPTERS -->
+<div class="story-section">
+  <div class="story-inner">
+    <div class="chapter">
+
+      <!-- Chapter 1: The Problem -->
+      <div class="chapter-block">
+        <div class="chapter-meta">
+          <div class="chapter-num fl">01</div>
+          <div class="chapter-tag fl d1">The Problem</div>
+          <h2 class="chapter-title fl d2">Why has genuinely honest food become so hard to find?</h2>
+        </div>
+        <div class="chapter-body">
+          <div class="chapter-para">
+            <div class="para-dot"></div>
+            <p>The Native Folks was created from a simple but important question: why has genuinely honest food become so hard to find?</p>
+          </div>
+          <div class="chapter-para">
+            <div class="para-dot"></div>
+            <p>Over time, we noticed that many products on the shelf were built for speed, appearance, and convenience — often with very little clarity around how they were grown, processed, or preserved. They looked refined, but rarely felt real.</p>
+          </div>
+          <div class="chapter-para">
+            <div class="para-dot"></div>
+            <p>We wanted to build something different.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="chapter-divider fu">
+        <div class="chapter-divider-line"></div>
+        <div class="chapter-divider-dot"></div>
+        <div class="chapter-divider-line"></div>
+      </div>
+
+      <!-- Chapter 2: The Answer -->
+      <div class="chapter-block">
+        <div class="chapter-meta">
+          <div class="chapter-num fr">02</div>
+          <div class="chapter-tag fr d1">The Answer</div>
+          <h2 class="chapter-title fr d2">Good food does not need shortcuts.</h2>
+        </div>
+        <div class="chapter-body">
+          <div class="chapter-para">
+            <div class="para-dot"></div>
+            <p>The Native Folks is rooted in the belief that good food does not need shortcuts. It begins with the soil, with thoughtful farming, with natural nourishment, and with the patience to let nature do its work. That belief shapes every decision we make — from sourcing to drying to packaging.</p>
+          </div>
+          <div class="chapter-para">
+            <div class="para-dot"></div>
+            <p>Our raisins are grown with care, sun-dried slowly, and made without sulphur, bleaching, or unnecessary additives. Every batch is lab-tested because we believe purity should not just be claimed — it should be proven.</p>
+          </div>
+          <div class="chapter-para">
+            <div class="para-dot"></div>
+            <p>For us, this is about more than one product. It is about bringing back trust in everyday food. It is about creating a brand that feels Indian at its core, modern in its standards, and honest in everything it offers.</p>
+          </div>
+          <div class="chapter-para">
+            <div class="para-dot"></div>
+            <p>The Native Folks is our way of returning to what matters: food that is raw, real, and rooted.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Closing quote -->
+    <div class="story-quote si d1">
+      <p>"If we can't trust it for our own families, we won't offer it to yours."</p>
+      <cite>— The Native Folks</cite>
+    </div>
+  </div>
+</div>
+
+<!-- FOUNDERS -->
+<div class="founders-section">
+  <div class="founders-inner">
+    <div class="founders-header">
+      <div class="founders-header-label fu">The People Behind It</div>
+      <h2 class="founders-header-h2 fu d1">Meet the Founders</h2>
+      <p class="founders-header-sub fu d2">The Native Folks was built by people who wanted to create a brand they could trust in their own homes — one rooted in authenticity, better sourcing, and a more honest way of bringing food to consumers.</p>
+    </div>
+
+    <div class="founders-list">
+
+      <!-- Founder 1: Rohan -->
+      <div class="founder-row si">
+        <div class="founder-photo">
+          <img src="https://ik.imagekit.io/tnf/TNF/Rohan%20Patil" alt="Rohan — Founder, The Native Folks" loading="lazy"/>
+          <div class="founder-photo-overlay"></div>
+        </div>
+        <div class="founder-info">
+          <div class="founder-info-num">Founder 01</div>
+          <div class="founder-info-line"></div>
+          <div class="founder-info-name">Rohan</div>
+          <div class="founder-info-role">Brand Vision & Growth</div>
+          <p class="founder-info-bio">Rohan is deeply involved in building The Native Folks with a focus on brand vision, growth, and consumer trust. With a strong belief in authenticity and long-term brand building, he brings together business thinking and a commitment to creating products that are both honest and meaningful.</p>
+        </div>
+      </div>
+
+      <!-- Founder 2: Kaushik -->
+      <div class="founder-row si d1">
+        <div class="founder-photo">
+          <img src="https://ik.imagekit.io/tnf/TNF/Kaushik" alt="Kaushik — Founder, The Native Folks" loading="lazy"/>
+          <div class="founder-photo-overlay"></div>
+        </div>
+        <div class="founder-info">
+          <div class="founder-info-num">Founder 02</div>
+          <div class="founder-info-line"></div>
+          <div class="founder-info-name">Kaushik</div>
+          <div class="founder-info-role">Operations & Sourcing</div>
+          <p class="founder-info-bio">Kaushik brings operational strength and a grounded approach to sourcing, process, and execution. His role in shaping the product journey helps ensure that The Native Folks stays true to its promise of purity, transparency, and consistency.</p>
+        </div>
+      </div>
+
+      <!-- Founder 3: Abhay -->
+      <div class="founder-row si d2">
+        <div class="founder-photo">
+          <img src="https://ik.imagekit.io/tnf/TNF/Abhay" alt="Abhay — Founder, The Native Folks" loading="lazy"/>
+          <div class="founder-photo-overlay"></div>
+        </div>
+        <div class="founder-info">
+          <div class="founder-info-num">Founder 03</div>
+          <div class="founder-info-line"></div>
+          <div class="founder-info-name">Abhay</div>
+          <div class="founder-info-role">Strategy & Partnerships</div>
+          <p class="founder-info-bio">Abhay contributes to the brand with a focus on strategy, partnerships, and market development. His perspective helps balance rooted brand values with modern consumer expectations and scalable business thinking.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<div class="video-section">
+  <div class="video-inner">
+    <div class="video-header">
+      <div class="video-label fu">Watch</div>
+      <h2 class="video-heading fu d1">See Our Story<br/><em>Come to Life.</em></h2>
+      <p class="video-sub fu d2">The Native Folks is more than a product on a shelf. It is a journey shaped by soil, sunlight, patience, and purpose. Watch our brand film to see the philosophy, people, and process behind what we create.</p>
+    </div>
+    <div class="video-frame si d1">
+      <!-- Swap in YouTube embed when ready:
+      <iframe style="position:absolute;inset:0;width:100%;height:100%;" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="The Native Folks Brand Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      -->
+      <div class="video-placeholder-inner">
+        <div class="play-btn">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="rgba(255,255,255,.8)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="video-coming">Brand film coming soon</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-logo"><img data-src="TNF_Black" src="" alt="The Native Folks" style="height:72px;width:auto;filter:invert(1) brightness(1.8);" loading="lazy"/></div>
+      <p>Raw. Real. Rooted.<br/>Preserving India's artisanal agricultural heritage for the global palate.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Pages</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="raisin.html">Sun-Dried Raisins</a></li>
+        <li><a href="index.html#why-us">Why Native?</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="https://wa.me/919172658066?text=Hi%21%20I%20have%20a%20question%20about%20The%20Native%20Folks%20products." target="_blank">Contact Us</a></li>
+        <li><a href="https://www.instagram.com/thenativefolksofficial/" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Buy Now</h5>
+      <ul>
+        <li><a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/" target="_blank">Amazon</a></li>
+        <li><a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617" target="_blank">Blinkit</a></li>
+        <li><a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 The Native Folks. Artisanal Heritage Preserved.</div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" id="wa-float" aria-label="Order on WhatsApp" style="position:fixed;bottom:1.5rem;right:1.25rem;z-index:499;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);cursor:pointer;text-decoration:none;transition:transform .25s ease;animation:waPulse 2.5s ease infinite;">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+var IMGS={};
+function injectImgs(){
+  document.querySelectorAll('[data-src]').forEach(function(el){
+    var k=el.getAttribute('data-src');
+    if(IMGS[k]) el.src=IMGS[k];
+  });
+}
+IMGS["TNF_Black"]="https://ik.imagekit.io/tnf/TNF_Black.png";
+
+function toggleMob(){
+  var m=document.getElementById('mobile-menu');
+  var open=m.style.display!=='flex';
+  m.style.display=open?'flex':'none';
+  var h1=document.getElementById('h1'),h2=document.getElementById('h2'),h3=document.getElementById('h3');
+  if(open){h1.style.transform='rotate(45deg) translate(5px,5px)';h2.style.opacity='0';h3.style.transform='rotate(-45deg) translate(5px,-5px)';}
+  else{h1.style.transform='';h2.style.opacity='';h3.style.transform='';}
+}
+function closeMob(){
+  document.getElementById('mobile-menu').style.display='none';
+  document.getElementById('h1').style.transform='';document.getElementById('h2').style.opacity='';document.getElementById('h3').style.transform='';
+}
+
+var allReveal=document.querySelectorAll('.fu,.fl,.fr,.si,.chapter-para');
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}
+  });
+},{threshold:0.08});
+allReveal.forEach(function(el){io.observe(el);});
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',injectImgs);
+}else{
+  injectImgs();
+}
+</script>
+</body>
+</html>
