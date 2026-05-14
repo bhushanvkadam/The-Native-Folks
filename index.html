@@ -326,7 +326,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
       <a href="#hero" class="nav-active" data-nav="hero">Home</a>
       <a href="#range" data-nav="range">Shop</a>
       <a href="#why-us" data-nav="why-us">Why Us</a>
-      <a href="#our-story" data-nav="our-story">Our Story</a>
+      <a href="our-story.html" data-nav="our-story">Our Story</a>
       <a href="raisin.html" style="color:#c27618;border-bottom:2px solid #c27618;padding-bottom:2px;">Raisins</a>
     </nav>
     <div class="nav-right">
@@ -362,7 +362,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     <a href="#hero" onclick="closeMob()">Home</a>
     <a href="#range" onclick="closeMob()">Shop</a>
     <a href="#why-us" onclick="closeMob()">Why Us</a>
-    <a href="#our-story" onclick="closeMob()">Our Story</a>
+    <a href="our-story.html" onclick="closeMob()">Our Story</a>
     <a href="raisin.html" style="color:#c27618;">Raisins</a>
     <div class="mob-btns">
       <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.875rem 1.5rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
@@ -420,17 +420,16 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <div class="story-label">Our Story</div>
         <h2 class="story-heading">Why We Started<br/>The Native Folks</h2>
         <div class="story-body">
-          <p>The Native Folks began with a simple belief — food should feel honest, pure, and close to its source.</p>
-          <p>As consumers ourselves, we found that many products in the market looked polished, but offered very little transparency about how they were grown, processed, or preserved.</p>
-          <p>So we chose to build a brand rooted in traditional farming values, natural processes, and proof-led purity — starting with sun-dried raisins made without sulphur, bleaching, or shortcuts.</p>
-          <p>Every pack is a reflection of what we stand for: food that is raw, real, and rooted.</p>
-          <p><strong>If we can't trust it for our own families, we won't offer it to yours.</strong></p>
+          <p>We started The Native Folks because we couldn't find food we truly trusted for our own families.</p>
+          <p>Everything in the market looked polished, but very little felt real.</p>
+          <p>So we went back to the source — to farmers, to soil, to traditional methods — and built something we could stand behind.</p>
+          <p><strong>If it's not good enough for our home, it won't reach yours.</strong></p>
         </div>
         <div style="margin-top:1.75rem;">
-          <a href="our-story.html" style="display:inline-flex;align-items:center;gap:.5rem;background:none;border:1px solid rgba(3,39,23,.2);border-radius:.75rem;padding:.65rem 1.25rem;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#032717;transition:background .2s;text-decoration:none;" onmouseover="this.style.background='#fef2de'" onmouseout="this.style.background='none'">
-            Discover Our Story
+          <button onclick="openModal('about-modal')" style="display:inline-flex;align-items:center;gap:.5rem;background:none;border:1px solid rgba(3,39,23,.2);border-radius:.75rem;padding:.65rem 1.25rem;cursor:pointer;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#032717;transition:background .2s;" onmouseover="this.style.background='#fef2de'" onmouseout="this.style.background='none'">
+            Read Our Full Story
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+          </button>
         </div>
       </div>
       <!-- Right: logo -->
@@ -472,7 +471,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <div class="pcard-meta">
           <div>
             <a href="raisin.html" style="text-decoration:none;"><div class="pcard-name" style="text-decoration:none;">Sun-Dried Raisins</div></a>
-            <div class="pcard-desc">Organic · 200g</div>
+            <div class="pcard-desc">Nashik Valley · Organic · 200g</div>
           </div>
           <div class="pcard-price">₹349</div>
         </div>
@@ -499,7 +498,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         </div>
       </div>
       <!-- Ghee CS -->
-      <div class="pcard" style="opacity:.88;">
+      <div class="pcard" style="opacity:.82;">
         <div style="height:280px;border-radius:1rem;background:linear-gradient(135deg,#f2e7d3 0%,#fef2de 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:1.25rem;position:relative;overflow:hidden;">
           <div style="position:absolute;width:180px;height:180px;border-radius:50%;border:1px solid rgba(3,39,23,.07);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
           <div style="position:absolute;width:240px;height:240px;border-radius:50%;border:1px solid rgba(3,39,23,.04);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
@@ -511,31 +510,11 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
             <div style="font-family:'Manrope',sans-serif;font-size:.75rem;color:#72594a;margin-top:.5rem;">2026</div>
           </div>
         </div>
-        <div class="pcard-meta">
-          <div>
-            <div class="pcard-name">A2 Desi Ghee</div>
-            <div class="pcard-desc">Organic · Bilona Method</div>
-          </div>
-        </div>
-        <div style="font-family:'Manrope',sans-serif;font-size:.85rem;color:#72594a;line-height:1.7;margin-bottom:1rem;">
-          <p>Made using the traditional Bilona method, our A2 ghee is churned from curd and slowly processed to retain its natural richness and nutrition.</p>
-          <p style="margin-top:.5rem;">We follow a cruelty-free, calf-first approach, using only surplus milk, with cows nourished on natural, chemical-free feed.</p>
-        </div>
-        <div style="margin-bottom:1.25rem;">
-          <div style="font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#032717;margin-bottom:.5rem;">Highlights</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.35rem;">
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.82rem;color:#72594a;"><span style="width:5px;height:5px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;display:inline-block;"></span>Made from A2 milk with Bilona method</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.82rem;color:#72594a;"><span style="width:5px;height:5px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;display:inline-block;"></span>Calf-first, cruelty-free approach</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.82rem;color:#72594a;"><span style="width:5px;height:5px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;display:inline-block;"></span>No additives or preservatives</li>
-          </ul>
-        </div>
-        <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20be%20notified%20when%20A2%20Desi%20Ghee%20is%20available.%20Please%20add%20me%20to%20the%20list%21" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:.6rem;padding:.75rem 1rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Notify Me When Available
-        </a>
+        <div style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.2rem;color:#032717;">A2 Desi Ghee</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;margin:.25rem 0;">Organic · Bilona Method</div>
       </div>
       <!-- Coffee CS -->
-      <div class="pcard" style="opacity:.88;">
+      <div class="pcard" style="opacity:.82;">
         <div style="height:280px;border-radius:1rem;background:linear-gradient(135deg,#f2e7d3 0%,#fef2de 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:1.25rem;position:relative;overflow:hidden;">
           <div style="position:absolute;width:180px;height:180px;border-radius:50%;border:1px solid rgba(3,39,23,.07);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
           <div style="position:absolute;width:240px;height:240px;border-radius:50%;border:1px solid rgba(3,39,23,.04);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
@@ -547,27 +526,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
             <div style="font-family:'Manrope',sans-serif;font-size:.75rem;color:#72594a;margin-top:.5rem;">2026</div>
           </div>
         </div>
-        <div class="pcard-meta">
-          <div>
-            <div class="pcard-name">Organic Coffee</div>
-            <div class="pcard-desc">Single Estate · Cold Brew Grade</div>
-          </div>
-        </div>
-        <div style="font-family:'Manrope',sans-serif;font-size:.85rem;color:#72594a;line-height:1.7;margin-bottom:1rem;">
-          <p>Sourced from select estates and grown without chemicals, our coffee is carefully processed to retain its natural flavour, smoothness, and richness — perfect for both hot brews and cold brews.</p>
-        </div>
-        <div style="margin-bottom:1.25rem;">
-          <div style="font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#032717;margin-bottom:.5rem;">Highlights</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.35rem;">
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.82rem;color:#72594a;"><span style="width:5px;height:5px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;display:inline-block;"></span>Single estate sourcing</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.82rem;color:#72594a;"><span style="width:5px;height:5px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;display:inline-block;"></span>Chemical-free cultivation</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.82rem;color:#72594a;"><span style="width:5px;height:5px;border-radius:50%;background:#c27618;margin-top:.45rem;flex-shrink:0;display:inline-block;"></span>Smooth, balanced flavour</li>
-          </ul>
-        </div>
-        <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20be%20notified%20when%20Organic%20Coffee%20is%20available.%20Please%20add%20me%20to%20the%20list%21" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:.6rem;padding:.75rem 1rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Notify Me When Available
-        </a>
+        <div style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.2rem;color:#032717;">Organic Coffee</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;margin:.25rem 0;">Single Estate · Cold Brew Grade</div>
       </div>
     </div>
   </div>

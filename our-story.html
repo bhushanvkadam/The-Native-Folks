@@ -163,6 +163,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   .page-hero{min-height:44vh;}
   .story-quote{padding:2.5rem;}
   .founder-info{padding:2.5rem;}
+  .founders-circles{grid-template-columns:1fr!important;max-width:340px!important;}
 }
 @media(max-width:600px){
   .founder-photo{height:280px;}
@@ -304,58 +305,57 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 </div>
 
 <!-- FOUNDERS -->
-<div class="founders-section">
+<div class="founders-section" style="background:#032717;padding:7rem 0;">
   <div class="founders-inner">
-    <div class="founders-header">
-      <div class="founders-header-label fu">The People Behind It</div>
-      <h2 class="founders-header-h2 fu d1">Meet the Founders</h2>
-      <p class="founders-header-sub fu d2">The Native Folks was built by people who wanted to create a brand they could trust in their own homes — one rooted in authenticity, better sourcing, and a more honest way of bringing food to consumers.</p>
+
+    <!-- Narrative -->
+    <div style="max-width:780px;margin:0 auto 5rem;text-align:center;" class="fu">
+      <div style="font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:rgba(255,255,255,.3);margin-bottom:1.25rem;">The People Behind It</div>
+      <h2 style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.2rem);color:#fff;line-height:1.05;margin-bottom:2.5rem;">Meet the Founders</h2>
+      <div style="display:flex;flex-direction:column;gap:1.25rem;text-align:left;">
+        <p style="font-family:'Manrope',sans-serif;font-size:1rem;color:rgba(255,255,255,.65);line-height:1.85;">It started with a farm visit. In the summer of 2024, Kaushik visited Abhay's family raisin farm in Karnataka. What he expected was a simple sourcing trip. What he found was something harder to ignore.</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:1rem;color:rgba(255,255,255,.65);line-height:1.85;">The grapes were real. The soil was rich. But somewhere between the farm and the shelf, the process had changed — sulphur to dry faster, bleach for a golden colour, additives to extend life. Things added not for the consumer, but for convenience.</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:1rem;color:rgba(255,255,255,.65);line-height:1.85;">Abhay had been watching this shift for years. Fifteen years in corporate sales, a family in farming — he knew both sides of the gap. Rohan had spent 14 years building brands. He knew what consumers were being sold, and increasingly, what they were starting to question.</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:1rem;color:rgba(255,255,255,.65);line-height:1.85;">Three different vantage points. The same conclusion: <strong style="color:#fff;">Good food doesn't need fixing. It just needs honesty.</strong></p>
+      </div>
     </div>
 
-    <div class="founders-list">
+    <!-- 3 circular portraits -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;max-width:900px;margin:0 auto;" class="fu d1">
 
-      <!-- Founder 1: Rohan -->
-      <div class="founder-row si">
-        <div class="founder-photo">
-          <img src="https://ik.imagekit.io/tnf/TNF/Rohan%20Patil" alt="Rohan — Founder, The Native Folks" loading="lazy"/>
-          <div class="founder-photo-overlay"></div>
+      <!-- Rohan -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+        <div style="width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.12);box-shadow:0 16px 48px rgba(0,0,0,.35);">
+          <img src="https://ik.imagekit.io/tnf/TNF/Rohan%20Patil" alt="Rohan Patil — Founder, The Native Folks" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" loading="lazy"/>
         </div>
-        <div class="founder-info">
-          <div class="founder-info-num">Founder 01</div>
-          <div class="founder-info-line"></div>
-          <div class="founder-info-name">Rohan</div>
-          <div class="founder-info-role">Brand Vision & Growth</div>
-          <p class="founder-info-bio">Rohan is deeply involved in building The Native Folks with a focus on brand vision, growth, and consumer trust. With a strong belief in authenticity and long-term brand building, he brings together business thinking and a commitment to creating products that are both honest and meaningful.</p>
+        <div style="text-align:center;">
+          <div style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;margin-bottom:.25rem;">Rohan Patil</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.35);">Brand &amp; Marketing</div>
+          <p style="font-family:'Manrope',sans-serif;font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.7;margin-top:.75rem;">15 years building consumer businesses. Now building one he actually believes in.</p>
         </div>
       </div>
 
-      <!-- Founder 2: Kaushik -->
-      <div class="founder-row si d1">
-        <div class="founder-photo">
-          <img src="https://ik.imagekit.io/tnf/TNF/Kaushik" alt="Kaushik — Founder, The Native Folks" loading="lazy"/>
-          <div class="founder-photo-overlay"></div>
+      <!-- Kaushik -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+        <div style="width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.12);box-shadow:0 16px 48px rgba(0,0,0,.35);">
+          <img src="https://ik.imagekit.io/tnf/TNF/Kaushik" alt="Kaushik Desai — Founder, The Native Folks" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" loading="lazy"/>
         </div>
-        <div class="founder-info">
-          <div class="founder-info-num">Founder 02</div>
-          <div class="founder-info-line"></div>
-          <div class="founder-info-name">Kaushik</div>
-          <div class="founder-info-role">Operations & Sourcing</div>
-          <p class="founder-info-bio">Kaushik brings operational strength and a grounded approach to sourcing, process, and execution. His role in shaping the product journey helps ensure that The Native Folks stays true to its promise of purity, transparency, and consistency.</p>
+        <div style="text-align:center;">
+          <div style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;margin-bottom:.25rem;">Kaushik Desai</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.35);">Operations</div>
+          <p style="font-family:'Manrope',sans-serif;font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.7;margin-top:.75rem;">On the ground, every day. The reason our promises don't stay on paper.</p>
         </div>
       </div>
 
-      <!-- Founder 3: Abhay -->
-      <div class="founder-row si d2">
-        <div class="founder-photo">
-          <img src="https://ik.imagekit.io/tnf/TNF/Abhay" alt="Abhay — Founder, The Native Folks" loading="lazy"/>
-          <div class="founder-photo-overlay"></div>
+      <!-- Abhay -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+        <div style="width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.12);box-shadow:0 16px 48px rgba(0,0,0,.35);">
+          <img src="https://ik.imagekit.io/tnf/TNF/Abhay" alt="Abhay Desai — Founder, The Native Folks" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" loading="lazy"/>
         </div>
-        <div class="founder-info">
-          <div class="founder-info-num">Founder 03</div>
-          <div class="founder-info-line"></div>
-          <div class="founder-info-name">Abhay</div>
-          <div class="founder-info-role">Strategy & Partnerships</div>
-          <p class="founder-info-bio">Abhay contributes to the brand with a focus on strategy, partnerships, and market development. His perspective helps balance rooted brand values with modern consumer expectations and scalable business thinking.</p>
+        <div style="text-align:center;">
+          <div style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;margin-bottom:.25rem;">Abhay Desai</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.35);">Strategy &amp; Sourcing</div>
+          <p style="font-family:'Manrope',sans-serif;font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.7;margin-top:.75rem;">Farmer's son. 15 years in corporate sales. He's seen both sides of the food chain.</p>
         </div>
       </div>
 
