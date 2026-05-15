@@ -110,7 +110,7 @@ img{max-width:100%;}
 .story-logo-img{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 32px rgba(3,39,23,.12));}
 
 /* ── Product grid — 3 products ── */
-.products-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.products-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;align-items:stretch;}
 .pcard{background:#fef2de;border-radius:1.5rem;padding:2rem;transition:transform .35s,box-shadow .35s;position:relative;}
 .pcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(3,39,23,.09);}
 .pcard-img{height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:1rem;margin-bottom:1.25rem;}
@@ -383,8 +383,8 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
   <div class="hero-content">
     <div style="max-width:30rem;">
       <div class="hero-badge">Now Available · Limited Batches</div>
-      <h1 class="hero-h1">Nature's<br/><em>Sweetest<br/>Secret.</em></h1>
-      <p class="hero-sub">Sun-dried, sulphur-free raisins — made the traditional way.</p>
+      <h1 class="hero-h1">Sun-dried,<br/>Chemical-free<br/><em>Organic Raisins.</em></h1>
+      <p class="hero-sub">Nature's Sweetest Secret.</p>
       <p class="hero-tags">Lab Tested | Sulphur Free | Residue ≤0.1%</p>
       <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:2rem;max-width:360px;">
         <!-- Row 1: Amazon + Blinkit -->
@@ -461,7 +461,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
     </div>
     <div class="products-grid-3 reveal">
       <!-- Raisins LIVE -->
-      <div class="pcard">
+      <div class="pcard" style="display:flex;flex-direction:column;">
         <div class="wax"><span>Residue<br/>Free</span></div>
         <a href="raisin.html" style="display:block;text-decoration:none;">
           <div class="pcard-img live">
@@ -470,10 +470,18 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         </a>
         <div class="pcard-meta">
           <div>
-            <a href="raisin.html" style="text-decoration:none;"><div class="pcard-name" style="text-decoration:none;">Sun-Dried Raisins</div></a>
-            <div class="pcard-desc">Nashik Valley · Organic · 200g</div>
+            <a href="raisin.html" style="text-decoration:none;"><div class="pcard-name">Sun-Dried Raisins</div></a>
+            <div class="pcard-desc">Nashik · Organic · 200g</div>
           </div>
           <div class="pcard-price">₹349</div>
+        </div>
+        <!-- Description -->
+        <p style="font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;line-height:1.65;margin-bottom:.875rem;">Naturally sun-dried over 7+ days with zero sulphur and no chemical treatment. Dark, chewy, and genuinely sweet — the way raisins used to taste.</p>
+        <!-- Highlights -->
+        <div style="display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Sulphur-free &amp; chemical-free</div>
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Lab-tested for purity, every batch</div>
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>No additives or preservatives</div>
         </div>
         <div class="batch-bar-wrap" id="batch-wrap">
           <div class="batch-meta">
@@ -483,51 +491,78 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
           <div class="batch-track"><div class="batch-fill" id="batch-fill"></div></div>
           <div class="batch-urgency" id="batch-urgency"></div>
         </div>
-        <div class="pcard-btns">
-          <a href="raisin.html" style="display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1rem;border-radius:.75rem;background:#032717;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#1b3d2b'" onmouseout="this.style.background='#032717'">
-            View Full Product Details
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <div class="pcard-btns" style="margin-top:auto;">
+          <a href="raisin.html" style="display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1rem;border-radius:.75rem;background:#032717;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;" onmouseover="this.style.background='#1b3d2b'" onmouseout="this.style.background='#032717'">View Full Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           <div class="pcard-btns-row">
-            <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=product_amazon" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.625rem 1rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;">
-              <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#fff;border-radius:4px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:18px;height:18px;object-fit:contain;" loading="lazy"/></span>Amazon</a>
-            <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=product_blinkit" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.625rem 1rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;">
-              <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:22px;height:22px;object-fit:contain;" loading="lazy"/></span>Blinkit</a>
+            <a href="https://www.amazon.in/Sun-Dried-Handpicked-Naturally-Antioxidants-Traditional/dp/B0FY2KK51W/?utm_source=tnf_site&utm_medium=product_amazon" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1rem;border-radius:.75rem;background:#1a1a1a;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;justify-content:center;">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:#fff;border-radius:3px;flex-shrink:0;"><img data-src="Amazon_full" src="" alt="" style="width:16px;height:16px;object-fit:contain;" loading="lazy"/></span>Amazon</a>
+            <a href="https://blinkit.com/prn/the-native-folks-sun-dried-raisins/prid/725617?utm_source=tnf_site&utm_medium=product_blinkit" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1rem;border-radius:.75rem;background:#F8CB46;color:#1a1a1a;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;justify-content:center;">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:3px;flex-shrink:0;overflow:hidden;"><img data-src="Blinkit" src="" alt="" style="width:20px;height:20px;object-fit:contain;" loading="lazy"/></span>Blinkit</a>
           </div>
-          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;padding:.625rem 1rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;white-space:nowrap;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Order on WhatsApp</a>
+          <a href="https://wa.me/919172658066?text=Hi%21%20I%27d%20like%20to%20order%3A%0A%0A%F0%9F%9B%92%20Product%3A%20Sun-Dried%20Raisins%20(200g)%0A%F0%9F%94%A2%20Quantity%3A%201%20pack%0A%F0%9F%93%8D%20Pincode%3A%20%5Bplease%20fill%5D%0A%0AKindly%20confirm%20availability%20and%20share%20payment%20details.%20Thank%20you!" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.625rem 1rem;border-radius:.75rem;background:#25D366;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order on WhatsApp</a>
         </div>
       </div>
+
       <!-- Ghee CS -->
-      <div class="pcard" style="opacity:.82;">
-        <div style="height:280px;border-radius:1rem;background:linear-gradient(135deg,#f2e7d3 0%,#fef2de 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:1.25rem;position:relative;overflow:hidden;">
-          <div style="position:absolute;width:180px;height:180px;border-radius:50%;border:1px solid rgba(3,39,23,.07);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-          <div style="position:absolute;width:240px;height:240px;border-radius:50%;border:1px solid rgba(3,39,23,.04);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-          <div style="width:72px;height:72px;border-radius:1.25rem;background:#72594a;display:flex;align-items:center;justify-content:center;">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l1 5H7L8 2z"/><path d="M7 7c0 8 2 13 5 13s5-5 5-13"/><path d="M9 12c0 0 1 2 3 2s3-2 3-2"/></svg>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.25em;color:#032717;background:#fff;padding:.35rem 1rem;border-radius:999px;display:inline-block;">Coming Soon</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:.75rem;color:#72594a;margin-top:.5rem;">2026</div>
+      <div class="pcard" style="display:flex;flex-direction:column;opacity:.9;">
+        <div style="height:280px;border-radius:1rem;overflow:hidden;margin-bottom:1.25rem;position:relative;flex-shrink:0;">
+          <img data-src="RAISIN" src="" alt="" style="width:100%;height:100%;object-fit:cover;filter:blur(18px) brightness(.7);transform:scale(1.1);display:block;" loading="lazy"/>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;">
+            <div style="width:64px;height:64px;border-radius:1.25rem;background:rgba(114,89,74,.85);display:flex;align-items:center;justify-content:center;">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l1 5H7L8 2z"/><path d="M7 7c0 8 2 13 5 13s5-5 5-13"/><path d="M9 12c0 0 1 2 3 2s3-2 3-2"/></svg>
+            </div>
+            <div style="font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.25em;color:#fff;background:rgba(3,39,23,.6);padding:.35rem 1rem;border-radius:999px;">Coming Soon · 2026</div>
           </div>
         </div>
-        <div style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.2rem;color:#032717;">A2 Desi Ghee</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;margin:.25rem 0;">Organic · Bilona Method</div>
+        <div class="pcard-meta">
+          <div>
+            <div class="pcard-name">A2 Desi Ghee</div>
+            <div class="pcard-desc">Organic · Bilona Method</div>
+          </div>
+        </div>
+        <p style="font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;line-height:1.65;margin-bottom:.875rem;">Made using the traditional bilona method, our A2 ghee is churned from curd and slowly processed to retain its natural richness and nutrition. We follow a cruelty-free, calf-first approach, using only surplus milk, with cows nourished on natural, chemical-free feed.</p>
+        <div style="display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Made from A2 milk with Bilona method</div>
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Calf-first, cruelty-free approach</div>
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>No additives or preservatives</div>
+        </div>
+        <div style="margin-top:auto;">
+          <a href="https://wa.me/919172658066?text=Hi%21%20Please%20add%20me%20to%20the%20waitlist%20for%20A2%20Desi%20Ghee.%20Looking%20forward%20to%20it%21" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1rem;border-radius:.75rem;background:#032717;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;" onmouseover="this.style.background='#1b3d2b'" onmouseout="this.style.background='#032717'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Notify Me When Available
+          </a>
+        </div>
       </div>
+
       <!-- Coffee CS -->
-      <div class="pcard" style="opacity:.82;">
-        <div style="height:280px;border-radius:1rem;background:linear-gradient(135deg,#f2e7d3 0%,#fef2de 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:1.25rem;position:relative;overflow:hidden;">
-          <div style="position:absolute;width:180px;height:180px;border-radius:50%;border:1px solid rgba(3,39,23,.07);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-          <div style="position:absolute;width:240px;height:240px;border-radius:50%;border:1px solid rgba(3,39,23,.04);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-          <div style="width:72px;height:72px;border-radius:1.25rem;background:#1b3d2b;display:flex;align-items:center;justify-content:center;">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.25em;color:#032717;background:#fff;padding:.35rem 1rem;border-radius:999px;display:inline-block;">Coming Soon</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:.75rem;color:#72594a;margin-top:.5rem;">2026</div>
+      <div class="pcard" style="display:flex;flex-direction:column;opacity:.9;">
+        <div style="height:280px;border-radius:1rem;overflow:hidden;margin-bottom:1.25rem;position:relative;flex-shrink:0;">
+          <img data-src="RAISIN" src="" alt="" style="width:100%;height:100%;object-fit:cover;filter:blur(18px) brightness(.55) sepia(.4);transform:scale(1.1);display:block;" loading="lazy"/>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;">
+            <div style="width:64px;height:64px;border-radius:1.25rem;background:rgba(27,61,43,.85);display:flex;align-items:center;justify-content:center;">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg>
+            </div>
+            <div style="font-family:'Epilogue',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.25em;color:#fff;background:rgba(3,39,23,.6);padding:.35rem 1rem;border-radius:999px;">Coming Soon · 2026</div>
           </div>
         </div>
-        <div style="font-family:'Epilogue',sans-serif;font-weight:900;font-size:1.2rem;color:#032717;">Organic Coffee</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;margin:.25rem 0;">Single Estate · Cold Brew Grade</div>
+        <div class="pcard-meta">
+          <div>
+            <div class="pcard-name">Organic Coffee</div>
+            <div class="pcard-desc">Single Estate · Cold Brew Grade</div>
+          </div>
+        </div>
+        <p style="font-family:'Manrope',sans-serif;font-size:.8rem;color:#72594a;line-height:1.65;margin-bottom:.875rem;">Sourced from select estates and grown without chemicals, our coffee is carefully processed to retain its natural flavour, smoothness, and richness — perfect for both hot brews and cold brews.</p>
+        <div style="display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Single estate sourcing</div>
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Chemical-free cultivation</div>
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:.78rem;color:#032717;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c27618" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Smooth, balanced flavour</div>
+        </div>
+        <div style="margin-top:auto;">
+          <a href="https://wa.me/919172658066?text=Hi%21%20Please%20add%20me%20to%20the%20waitlist%20for%20Organic%20Coffee.%20Looking%20forward%20to%20it%21" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1rem;border-radius:.75rem;background:#032717;color:#fff;font-family:'Epilogue',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;text-decoration:none;" onmouseover="this.style.background='#1b3d2b'" onmouseout="this.style.background='#032717'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Notify Me When Available
+          </a>
+        </div>
       </div>
     </div>
   </div>
